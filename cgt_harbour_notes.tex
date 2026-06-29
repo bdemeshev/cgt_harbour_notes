@@ -1,0 +1,621 @@
+% arara: xelatex
+\documentclass[12pt]{article}
+
+% \usepackage{physics} % это трэшовый пакет!
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\urlstyle{same} % шрифт из основного текста
+
+\usepackage{verse}
+
+\usepackage{ulem} % перечёркнутый шрифт \sout{что-то} 
+
+\usepackage{tikzducks}
+
+\usepackage{tikz} % картинки в tikz
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes, arrows, positioning}
+\usepackage{tikz-3dplot} 
+\usepackage{tkz-euclide}
+
+\usepackage{verbatim}
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm} % куча стандартных математических плюшек
+
+\usepackage{comment}
+
+\usepackage[top=2cm, left=1.2cm, right=1.2cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+\usepackage{url} % to use \url{link to web}
+
+\newcommand{\smallduck}{\begin{tikzpicture}[scale=0.3]
+    \duck[
+        cape=black,
+        hat=black,
+        mask=black
+    ]
+    \end{tikzpicture}}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{tcolorbox} % рамочки!
+\usepackage{graphicx} % рисунки
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo[inline]{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos - печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\setcounter{MaxMatrixCols}{20}
+% by crazy default pmatrix supports only 10 cols :)
+
+
+\usepackage{fontspec}
+\usepackage{libertine}
+\usepackage{polyglossia}
+
+\setmainlanguage{english}
+\setotherlanguages{russian}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+% \setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+% \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+%\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+%\setlist[enumerate, 1]{label=\asbuk*),ref=\asbuk*}
+
+
+
+\usepackage[bibencoding=auto, backend=biber, sorting=none, style=alphabetic]{biblatex}
+\addbibresource{cgt.bib}
+
+\graphicspath{{./figures}}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+\DeclareMathOperator{\Corr}{\mathbb{C}orr}
+\DeclareMathOperator{\sCov}{sCov}
+\DeclareMathOperator{\sCorr}{sCorr}
+\DeclareMathOperator{\sVar}{sVar}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\hVar}{\widehat{\Var}}
+\DeclareMathOperator{\hCov}{\widehat{\Cov}}
+\DeclareMathOperator{\hCorr}{\widehat{\Corr}}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\colspan}{colspan}
+
+\DeclareMathOperator{\se}{se}
+\DeclareMathOperator{\row}{row}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\BestLin}{BestLin}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tr}{\trace}
+\DeclareMathOperator{\rk}{\rank}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Span}{span}
+% \span используется латехом для внутренних нужд
+
+\DeclareMathOperator{\mgf}{mgf}
+
+\DeclareMathOperator{\Convex}{Convex}
+\DeclareMathOperator{\plim}{plim}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\scalp}{\langle}{\rangle}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+% https://tex.stackexchange.com/questions/12910/how-do-i-typeset-vertical-and-horizontal-lines-inside-a-matrix
+% для линий в матрицах
+\newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
+\newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}}
+
+
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cF}{\mathcal{F}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+
+\newcommand{\dBern}{\mathrm{Bern}}
+\newcommand{\dPois}{\mathrm{Pois}}
+\newcommand{\dBin}{\mathrm{Bin}}
+\newcommand{\dMult}{\mathrm{Mult}}
+\newcommand{\dGeom}{\mathrm{Geom}}
+\newcommand{\dNHGeom}{\mathrm{NHGeom}}
+\newcommand{\dHGeom}{\mathrm{HGeom}}
+\newcommand{\dDUnif}{\mathrm{DUnif}}
+\newcommand{\dFS}{\mathrm{FS}}
+\newcommand{\dNBin}{\mathrm{NBin}}
+
+\newcommand{\dTri}{\mathrm{Triangle}}
+\newcommand{\dUnif}{\mathrm{Unif}}
+\newcommand{\dCauchy}{\mathrm{Cauchy}}
+\newcommand{\dN}{\mathcal{N}}
+\newcommand{\dLN}{\mathcal{LN}}
+\newcommand{\dExpo}{\mathrm{Expo}}
+\newcommand{\dBeta}{\mathrm{Beta}}
+\newcommand{\dGamma}{\mathrm{Gamma}}
+\newcommand{\dWei}{\mathrm{Wei}}
+\newcommand{\dLogistic}{\mathrm{Logistic}}
+\newcommand{\dRayleigh}{\mathrm{Rayleigh}}
+\newcommand{\dPareto}{\mathrm{Pareto}}
+
+
+% \renewcommand{\b}{\beta} % commented to avoid conflicts with base latex
+% \renewcommand{\u}{u} % commented to avoid conflicts with base latex
+
+
+
+
+% выделение питоновских и других пакетов
+\newcommand{\sklearn}{sklearn}
+\newcommand{\statsmodels}{statsmodels}
+
+
+\usepackage{thmtools} % тонкая настройка окружения теорем
+
+
+% окружения!
+\declaretheorem[
+style=definition, 
+%thmbox=M,
+title=Theorem, 
+numberwithin=section, 
+]{theorem}
+
+
+\declaretheorem[
+style=definition, 
+title=Lemma, 
+numberwithin=section, 
+]{lemma}
+
+
+\declaretheorem[
+style=definition, 
+title=Idea, 
+% numberwithin=section, % ideas are rare!
+]{idea} 
+
+
+
+% опция sibling=theorem посередине даёт сквозную нумерацию с теоремами
+\declaretheorem[
+style=definition, 
+title=Definition, 
+sibling=theorem, 
+]{definition}
+
+\declaretheorem[
+style=definition, 
+title=Problem, 
+% sibling=theorem, 
+]{problem}
+
+\declaretheorem[
+style=definition, 
+title=Exercise, 
+% sibling=theorem, 
+numberwithin=section,
+]{exercise}
+
+
+\declaretheorem[
+style=definition,
+title=Solution,
+numbered=no
+]{sol}
+
+
+%\newenvironment{problem}{}{} % environment just prints the text
+% \newenvironment{sol}{}{}
+\newcommand{\trru}[1]{#1}
+\newcommand{\tren}[1]{#1}
+
+
+
+\begin{document}
+
+% задачи можно дёргать:
+% https://github.com/bdemeshev/metrics_pro/blob/master/metrics_body.tex
+% и ещё (слегка модифицируя)
+% https://github.com/bdemeshev/em_pset
+% картиночки и доказательства на английском:
+% https://github.com/olyagnilova/gauss-markov-pythagoras
+
+\tableofcontents{}
+
+
+
+\section{Classic binomial and multinomial identities}
+
+
+\begin{definition}
+    Factorial of $n$, denoted by $n!$, is the number of ways to put $n$ distinct objects in a queue. 
+\end{definition}
+
+
+\begin{definition}
+    Binomial coefficient $n \choose k$ is the number of ways to select $k$ distinct objects from $n$ distinct objects.
+\end{definition}
+
+\begin{definition}
+    For $n = a + b + c$ the multinomial coefficient $n \choose a, b, c$ is the number of ways to split $n$ distinct objects into different boxes, 
+    where the first box contains $a$ objects, the second box contains $b$ objects, the third box contains $c$ objects. 
+
+    One may create multinomial coefficient for any number of boxes :)
+\end{definition}
+
+
+\begin{exercise}
+Is $n \choose k$ equal to $n \choose n-k$? 
+
+Is $n \choose k$ equal to $n \choose k, n-k$?
+\end{exercise}
+
+\begin{exercise}
+Write the product
+    \[
+    {100 \choose 20} \cdot {80 \choose 50} \cdot {30 \choose 10}
+    \]
+as one multinomial coefficient.
+\end{exercise}
+
+\begin{exercise}
+Write 
+\[
+n \choose a, b, c, d
+\] using binomial coefficients.
+
+Write 
+\[
+n \choose a, b, c, d
+\]
+using factorials of $n$, $a$, $b$, $c$ and $d$.
+\end{exercise}
+
+\begin{idea}
+Solution strategies for combinatorial identities:
+\begin{enumerate}
+    \item Double counting or story proof. 
+    \item Visual identity (rare gem!).
+    \item Evaluation of a polynomial at a special point. Differentiation, integration.
+    \item Combine old identities into new. 
+    \item Guess the answer and verify by induction. 
+    \item Dark art!
+\end{enumerate}
+\end{idea}
+
+\subsection*{Pascal's triangle and rule}
+\begin{exercise}
+Recall the Pascal arithmetic triangle. Draw two versions: triangular and rectangular. 
+\end{exercise}
+
+% Here the answer usually contains just one binomial coefficient or no at all:
+\begin{exercise}
+Pascal's rule. Simplify
+\[
+{n \choose k} + {n \choose k+1}.
+\]
+\[
+{n \choose a-1, b, c} + {n \choose a, b-1, c} + {n \choose a, b, c-1}.
+\]
+\[
+{n \choose a-1, b, c, d} + {n \choose a, b-1, c, d} + {n \choose a, b, c-1, d} + {n \choose a, b, c, d-1}.
+\]
+\end{exercise}
+
+\begin{exercise}
+Simplify 
+\[
+{n \choose 0} + {n \choose 1} + {n \choose 2} + \dots + {n \choose n}.
+\]
+Recall the Pascal's rule and simplify 
+\[
+{2n \choose 0} + {2n \choose 2} + {2n \choose 4} + \dots + {2n \choose 2n}.
+\]
+Simplify
+\[
+{2n-1 \choose 0} + {2n-1 \choose 2} + {2n-1 \choose 4} + \dots + {2n-1 \choose 2n-2}.
+\]
+\end{exercise}
+
+\begin{exercise}
+Simplify 
+\[
+\sum_{a + b + c = 2026} {2026 \choose a, b, c}.
+\]    
+\[
+\sum_{a + b + c + d = 2027} {2027 \choose a, b, c, d}.
+\]    
+\[
+\sum_{a + b + c = 100} {100 \choose a} \cdot {100-a \choose b}.
+\]
+\[
+\sum_{a + b \leq n} {n \choose a} \cdot {n-a \choose b}.
+\]
+Here $a$, $b$ and $c$ are assumed non-negative integers.
+\end{exercise}
+
+\subsection*{Hockey-stick identity}
+
+\begin{exercise}
+Hockey-stick identity, Christmas stocking identity, boomerang identity.
+
+Simplify
+\[
+\sum_{n = a}^b {n \choose a}.
+\]
+\[
+1 + 2 + 3 + \dots + n.
+\]
+\[
+1\cdot 2 + 2 \cdot 3 + 3 \cdot 4 + \dots + n \cdot (n+1).
+\]
+\[
+1\cdot 2 \cdot 3 + 2 \cdot 3 \cdot 4 + 3 \cdot 4 \cdot 5 + \dots + n \cdot (n+1) \cdot (n+2).
+\]
+\end{exercise}
+
+\begin{exercise}
+Obtain closed form expressions for:     
+\[
+1^2 + 2^2 + \dots + n^2,
+\]
+\[
+1^3 + 2^3 + \dots + n^3,
+\]
+\[
+1^4 + 2^4 + \dots + n^4.
+\]
+\end{exercise}
+
+\begin{exercise}
+Hockey-sticks plus idea from linear algebra!
+
+Decompose $n^2 + 2n + 5$ using $n \choose 0$, $n \choose 1$, $n \choose 2$ as the basis. 
+
+Find the sum 
+\[
+\sum_{k=2}^{2026} {k^2 + 2k + 5}.
+\]
+
+Using similar trick find the sums
+\[
+\sum_{k=1}^{n} {5k^2 + 4k}, \quad \sum_{k=1}^{n} {k^3 + 2k^2}.
+\]
+\end{exercise}
+
+\begin{exercise}
+Let's start from some number $n \choose k$ inside the Pascal's triangle. 
+
+In one step we can go either in north-east or north-west direction. 
+
+Find the sum of all numbers we can reach.
+\end{exercise}
+
+
+\subsection*{Wandermonde's identity}
+
+\begin{exercise}
+Simplify 
+\[
+{a \choose 0}{b \choose m} + {a \choose 1}{b \choose m-1} + {a \choose 2}{b \choose m-2} + \dots + {a \choose m}{b \choose 0}.
+\]
+\[
+{a \choose 0}{m \choose 0} + {a \choose 1}{m \choose 1} + {a \choose 2}{m \choose 3} + \dots + {a \choose m}{m \choose m}.
+\]
+\[
+{a \choose 0}^2 + {a \choose 1}^2  + {a \choose 2}^2 + \dots + {a \choose a}^2.
+\]
+\end{exercise}
+
+\begin{exercise}
+There are $n = 500$ fishes in the pond, $t = 30$ of them are tagged. You capture $c = 5$ fishes at random without replacement. 
+Let the random variable $Y$ be the number of captured tagged fishes. 
+Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
+\end{exercise}
+
+\begin{exercise}
+There are $n = 24$ candies in the jar, $14$ with orange flavour and $10$ with ananas flavour.
+Your take $6$ candies at random. Let $Y$ be the number of candies with orange flavour you picked. 
+Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
+\end{exercise}
+
+\begin{exercise}
+A bridge hand (random $13$ cards out of $52$-card standard deck) is dealt. 
+
+What is the probability that the hand contains no spades? 
+
+What is the probability that the hand contains exactly $5$ hearts? 
+
+What is the probability that the hand contains at most two aces? 
+\end{exercise}
+
+\begin{exercise}
+Simplify 
+\[
+\sum_{a + b + c = k}{n_1 \choose a}{n_2 \choose b}{n_3 \choose c}. % {n_1 + n_2 + n_3 \choose k}
+\]
+\end{exercise}
+
+\subsection*{Binomial or Taylor or MacLaurin expansion}
+\begin{exercise}
+Write the Taylor expansion (binomial expansion) at $x = 0$ for 
+\[
+(1 + x)^{n}, \quad (x + y)^n.
+\]
+\end{exercise}
+
+
+\begin{exercise}
+By plugging some special points to the $(x + y)^n$ or somewhere else find the sums
+\[
+{n \choose 0} + {n \choose 1} + {n\choose 2} + \dots + {n \choose n}.
+\]
+\[
+\sum_{k=0}^n k {n \choose k}, \quad \sum_{k=0}^n (k-1) {n \choose k}, \quad \sum_{k=0}^n (-1)^k {n \choose k}, \quad \sum_{k=0}^n (-1)^{k-1} k {n \choose k}
+\]
+
+Hint: differentiation may help you.
+\end{exercise}
+
+
+\subsection*{How that can be?}
+
+\begin{exercise}
+Be brave, really brave! 
+
+Take a deep breath and calculate 
+\[
+{-1 \choose 3}, \quad {-5 \choose 5},\quad  {1.5 \choose 3}, \quad  
+{-1/2 \choose 4}, \quad  {1/2 \choose k}, \quad  {-1/2 \choose n}. 
+\]
+\end{exercise}
+
+\begin{exercise}
+Simplify 
+\[
+{-1/2 \choose 3} + {-1/2 \choose 4}.
+\]
+
+Draw the Pascal's triangle starting from $-1/2 \choose 0$. 
+
+Draw the Pascal's triangle starting from $1/3 \choose 0$. 
+\end{exercise}
+
+
+\begin{exercise}
+Write the Taylor expansion at $x = 0$ for 
+\[
+\frac{1}{1 - x}, \quad  (1 + x)^{-5}, \quad  (1 + x)^{-1/2}, \quad  
+(1 + 3x)^{1/3}, \quad  (1 - 5x)^{1/2}.
+\]
+\end{exercise}
+
+\begin{exercise}
+Simplify 
+\[
+{10 \choose 0}{-0.5 \choose 7} + {10 \choose 1}{-0.5 \choose 6} + {10 \choose 2}{-0.5 \choose 5} + \dots + {10 \choose 7}{-0.5 \choose 0}.
+\]
+
+Hint: for a honest proof consider the binomial expansion of $(1+x)^10$, $(1+x)^{-0.5}$, $(1+x)^{10-0.5}$.
+\end{exercise}
+
+
+\begin{exercise}
+Homage to Newton. 
+
+Write the Taylor expansion at $x=0$ for $(1 - x^2)^{1/2}$.
+
+Visually (or analytically if you wish) find the integral
+\[
+\int_{-1}^1 (1 - x^2)^{1/2}.
+\]
+
+Calculate the sums
+\[
+{1/2 \choose 0} - \frac{1}{3}{1/2 \choose 1} + \frac{1}{5} {1/2 \choose 2} + \dots
+\]
+\[
+\sum_{k=2}^{\infty} \frac{1}{2k+1} \frac{(2k - 3)!!}{(2k)!!}
+\]
+\end{exercise}
+
+
+\subsection*{Gauss summation trick}
+
+\begin{exercise}
+Simplify 
+\[
+1 + 2 + 3 + \dots + n;
+\]
+\[
+1^2 + 2^2 + 3^2 + \dots + n^2;
+\]
+\[
+{n \choose 1} + 2 {n \choose 2} + 3 {n \choose 3} + \dots + n{n \choose n};
+\]
+\[
+{n \choose 0} + 2 {n \choose 1} + 3 {n \choose 2} + \dots + (n+1){n \choose n};
+\]
+\[
+{n \choose 2} + 2 {n \choose 3} + 3 {n \choose 4} + \dots + (n-1){n \choose n};
+\]
+\[
+{n \choose 0} + 3 {n \choose 1} + 5 {n \choose 2} + \dots + (2n+1){n \choose n};
+\]
+\[
+{n \choose 0} - 2 {n \choose 1} + 3 {n \choose 2} - 4 {n \choose 3} \dots + (-1)^n (n+1){n \choose n};
+\]
+\[
+3{n \choose 1} + 7 {n \choose 2} + 11 {n \choose 3} + \dots + (4n-1){n \choose n};
+\]
+\[
+{n \choose 1} - 2 {n \choose 2} + 3 {n \choose 3} - 4 {n \choose 4} + \dots + (-1)^n n{n \choose n};
+\]
+\end{exercise}
+
+
+\nocite{graham1994concrete}
+\nocite{harris2010combinatorics}
+\nocite{guichard2025introcgt}    
+
+\addcontentsline{toc}{section}{Sources of wisdom}
+\printbibliography[heading=none]
+
+
+\end{document}
