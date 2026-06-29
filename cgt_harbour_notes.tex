@@ -279,8 +279,7 @@ numbered=no
 \tableofcontents{}
 
 
-
-\section{Classic binomial and multinomial identities}
+\section{Day 1. Classic binomial and multinomial identities}
 
 
 \begin{definition}
@@ -448,50 +447,6 @@ Find the sum of all numbers we can reach.
 \end{exercise}
 
 
-\subsection*{Wandermonde's identity}
-
-\begin{exercise}
-Simplify 
-\[
-{a \choose 0}{b \choose m} + {a \choose 1}{b \choose m-1} + {a \choose 2}{b \choose m-2} + \dots + {a \choose m}{b \choose 0}.
-\]
-\[
-{a \choose 0}{m \choose 0} + {a \choose 1}{m \choose 1} + {a \choose 2}{m \choose 3} + \dots + {a \choose m}{m \choose m}.
-\]
-\[
-{a \choose 0}^2 + {a \choose 1}^2  + {a \choose 2}^2 + \dots + {a \choose a}^2.
-\]
-\end{exercise}
-
-\begin{exercise}
-There are $n = 500$ fishes in the pond, $t = 30$ of them are tagged. You capture $c = 5$ fishes at random without replacement. 
-Let the random variable $Y$ be the number of captured tagged fishes. 
-Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
-\end{exercise}
-
-\begin{exercise}
-There are $n = 24$ candies in the jar, $14$ with orange flavour and $10$ with ananas flavour.
-Your take $6$ candies at random. Let $Y$ be the number of candies with orange flavour you picked. 
-Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
-\end{exercise}
-
-\begin{exercise}
-A bridge hand (random $13$ cards out of $52$-card standard deck) is dealt. 
-
-What is the probability that the hand contains no spades? 
-
-What is the probability that the hand contains exactly $5$ hearts? 
-
-What is the probability that the hand contains at most two aces? 
-\end{exercise}
-
-\begin{exercise}
-Simplify 
-\[
-\sum_{a + b + c = k}{n_1 \choose a}{n_2 \choose b}{n_3 \choose c}. % {n_1 + n_2 + n_3 \choose k}
-\]
-\end{exercise}
-
 \subsection*{Binomial or Taylor or MacLaurin expansion}
 \begin{exercise}
 Write the Taylor expansion (binomial expansion) at $x = 0$ for 
@@ -522,7 +477,7 @@ Be brave, really brave!
 Take a deep breath and calculate 
 \[
 {-1 \choose 3}, \quad {-5 \choose 5},\quad  {1.5 \choose 3}, \quad  
-{-1/2 \choose 4}, \quad  {1/2 \choose k}, \quad  {-1/2 \choose n}. 
+{-1/2 \choose 4}, \quad  {1/3 \choose k}, \quad  {-1/2 \choose n}. 
 \]
 \end{exercise}
 
@@ -576,6 +531,112 @@ Calculate the sums
 \end{exercise}
 
 
+
+\newpage
+\subsection*{Planned entrance quiz :)}
+
+\begin{enumerate}
+\item How many ways are to order $6$ persons in a queue?
+\item The box contains $50$ balls numbered from $1$ to $50$. We draw $6$ balls without replacement and write down the resulting sequence of numbers.
+How many different sequences are possible?
+\item I have $5$ yellow books and $7$ red books. I want to place them on my bookshelf and I would like to place yellow books to the left of red books. 
+How many book orders are possible?
+\end{enumerate}
+
+
+\subsection*{Home assignment-1:}
+
+\begin{enumerate}
+    \item 1.7(3) in the old enumeration:
+    
+    Simplify
+\[
+\sum_{a + b + c = 100} {100 \choose a} \cdot {100-a \choose b}.
+\]
+    \item 1.9(2) in the old enumeration:
+
+    Find explicit formula for the sum 
+    \[
+    1^3 + 2^3 + \dots + n^3.
+    \]
+    Hint: represent the general term $k^3$ as the sum of binomial coefficients and then use the hockey stick or Christmas stocking or boomerang!
+
+    \item 1.10(2) in the old enumeration:
+    
+    {[*]} Using hockey stick decomposition find the sums
+    \[
+    \sum_{k=1}^{n} {5k^2 + 4k}.
+    \]
+
+    \item 1.19 in the old enumeration:
+
+    {[*]} Take a deep breath and calculate 
+\[
+{-1 \choose 3}, \quad {-5 \choose 5},\quad  {1.5 \choose 3}, \quad  
+{-1/2 \choose 4}, \quad  {1/3 \choose k}, \quad  {-1/2 \choose n}. 
+\]
+
+    \item 1.21 in the old enumeration:
+    
+    Write the Taylor expansion at $x = 0$ for 
+\[
+\frac{1}{1 - x}, \quad  (1 + x)^{-5}, \quad  (1 + x)^{-1/2}, \quad  
+(1 + 3x)^{1/3}, \quad  (1 - 5x)^{1/2}.
+\]
+
+\end{enumerate}
+
+You are more than welcome to solve other exercises that we skipped. Starred exercises will be on the quiz next day. 
+
+\section{Day 2. Wandermonde's identity and beyond}
+
+\subsection*{Wandermonde's identity}
+
+\begin{exercise}
+Simplify 
+\[
+{a \choose 0}{b \choose m} + {a \choose 1}{b \choose m-1} + {a \choose 2}{b \choose m-2} + \dots + {a \choose m}{b \choose 0}.
+\]
+\[
+{a \choose 0}{m \choose 0} + {a \choose 1}{m \choose 1} + {a \choose 2}{m \choose 3} + \dots + {a \choose m}{m \choose m}.
+\]
+\[
+{a \choose 0}^2 + {a \choose 1}^2  + {a \choose 2}^2 + \dots + {a \choose a}^2.
+\]
+\end{exercise}
+
+\begin{exercise}
+There are $n = 500$ fishes in the pond, $t = 30$ of them are tagged. You capture $c = 5$ fishes at random without replacement. 
+Let the random variable $Y$ be the number of captured tagged fishes. 
+Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
+\end{exercise}
+
+\begin{exercise}
+There are $n = 24$ candies in the jar, $14$ with orange flavour and $10$ with ananas flavour.
+Your take $6$ candies at random. Let $Y$ be the number of candies with orange flavour you picked. 
+Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
+\end{exercise}
+
+\begin{exercise}
+A bridge hand (random $13$ cards out of $52$-card standard deck) is dealt. 
+
+What is the probability that the hand contains no spades? 
+
+What is the probability that the hand contains exactly $5$ hearts? 
+
+What is the probability that the hand contains at most two aces? 
+\end{exercise}
+
+\begin{exercise}
+Simplify 
+\[
+\sum_{a + b + c = k}{n_1 \choose a}{n_2 \choose b}{n_3 \choose c}. % {n_1 + n_2 + n_3 \choose k}
+\]
+\end{exercise}
+
+
+
+
 \subsection*{Gauss summation trick}
 
 \begin{exercise}
@@ -608,19 +669,6 @@ Simplify
 {n \choose 1} - 2 {n \choose 2} + 3 {n \choose 3} - 4 {n \choose 4} + \dots + (-1)^n n{n \choose n};
 \]
 \end{exercise}
-
-
-\newpage
-First day quiz :)
-
-\begin{enumerate}
-\item How many ways are to order $6$ persons in a queue?
-\item The box contains $50$ balls numbered from $1$ to $50$. We draw $6$ balls without replacement and write down the resulting sequence of numbers.
-How many different sequences are possible?
-\item I have $5$ yellow books and $7$ red books. I want to place them on my bookshelf and I would like to place yellow books to the left of red books. 
-How many book orders are possible?
-\end{enumerate}
-
 
 
 
