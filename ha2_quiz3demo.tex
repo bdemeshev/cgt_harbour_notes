@@ -1,0 +1,219 @@
+% arara: xelatex
+\documentclass[12pt]{article}
+
+% \usepackage{physics}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage{tikzducks}
+
+\usepackage{tikz} % картинки в tikz
+\usetikzlibrary{shapes, arrows, positioning}
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath, amsfonts, amssymb} % куча стандартных математических плюшек
+
+\usepackage{comment}
+
+\usepackage[top=2cm, left=1.2cm, right=1.2cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+\usepackage{url} % to use \url{link to web}
+
+\usepackage{xcolor}   % для цвета текста
+\usepackage{ulem}     % для зачёркивания (\sout)
+
+\usepackage[symbol]{footmisc}
+
+\newcommand{\smallduck}{\begin{tikzpicture}[scale=0.3]
+    \duck[
+        cape=black,
+        hat=black,
+        mask=black
+    ]
+    \end{tikzpicture}}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Harbour.space}
+\chead{}
+\rhead{HA2 and quiz3 demo}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{tcolorbox} % рамочки!
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos - печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\setcounter{MaxMatrixCols}{20}
+% by crazy default pmatrix supports only 10 cols :)
+
+
+\usepackage{fontspec}
+\usepackage{libertine}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+
+\usetikzlibrary{automata, positioning, arrows.meta, calc, shapes.multipart}
+
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+% \setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+% \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+% \setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+\DeclareMathOperator{\Corr}{\mathbb{C}orr}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\row}{row}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+% \DeclareMathOperator{\tr}{trace}
+\DeclareMathOperator{\card}{card}
+
+\DeclareMathOperator{\Convex}{Convex}
+\DeclareMathOperator{\plim}{plim}
+
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cF}{\mathcal{F}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\hb}{\hat{\beta}}
+\newcommand{\dPois}{\mathrm{Pois}}
+\newcommand{\dUnif}{\mathrm{Unif}}
+
+\usepackage{mathtools}
+
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\scalp}{\langle}{\rangle}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+
+
+\begin{document}
+
+%Madame de Pompadour%\footnote{official chief mistress of King Louis XV} 
+%was born exactly 204 years earlier, on 29 December 1721. 
+%Her original name was Jeanne Antoinette Poisson.
+
+
+
+
+
+\subsection*{Home assignment: day 2 $\to$ day 5}
+
+Deadline: 2026-07-03, 16:59. 
+
+\begin{enumerate}
+    \item There are $10$ standard indistinguishable dices. 
+
+\begin{enumerate}[label=\alph*)]
+    \item How many different combinations of scores are possible?
+    \item How many different combinations of scores are possible if at least one dice shows $6$?
+    \item How many different combinations of scores are possible if no dice shows $5$ nor $6$?
+\end{enumerate}
+
+\item There are $5$ types of post-cards sold at the post-office. 
+\begin{enumerate}[label=\alph*)]
+\item In how many different ways can I buy $12$ post-cards?
+\item In how many different ways can I buy $12$ post-cards if I would like to buy at least one post-card of every type?
+\end{enumerate}
+
+\item Using Gauss summation trick or otherwise find the sum:
+\[
+{n \choose 0} - 2 {n \choose 1} + 3 {n \choose 2} - 4 {n \choose 3} \dots + (-1)^n (n+1){n \choose n};
+\]
+
+\item Recall the mother-identity
+\[
+(1 + x)^n = 1 + {n \choose 1} x^1 + {n \choose 2} x^2 + \dots + {n \choose n} x^n.
+\]
+
+\begin{enumerate}
+    \item Find the first derivative of the mother-identity. 
+    \item Find the value of the sum
+\[
+{n \choose 1} + 2 \cdot 7 \cdot {n \choose 2} + 3 \cdot 7^2 \cdot {n \choose 2} + \dots + n \cdot 7^{n-1} {n \choose n}.
+\]
+\item Find the second derivative of the mother-identity.
+\item Find the value of the sum
+\[
+2 \cdot 1 {n \choose 2} + 3 \cdot 2 \cdot 9 \cdot {n \choose 3} + 4 \cdot 3 \cdot 9^2 \cdot {n \choose 4} + 5 \cdot 4 \cdot 9^3 \cdot {n \choose 5} + \dots + n(n-1) 9^{n-2} {n \choose n}.
+\]
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection*{Demo for the quiz on day 3}
+
+\begin{enumerate}
+    \item Using Gauss summation trick or otherwise find the sum 
+    \[
+    3 {n \choose 1} + 5 {n \choose 2} + 7 {n \choose 3} + \dots + (2n + 1) {n \choose n}.
+    \]
+    \item Consider the equation $a + b + c = 100$ with integers $a \geq 3$, $b \geq 2$, $c\geq 5$.
+    
+    How many solutions are there?
+\end{enumerate}
+
+
+
+\end{document}
+
