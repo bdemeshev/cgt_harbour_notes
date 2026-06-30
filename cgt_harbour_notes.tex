@@ -108,6 +108,7 @@
 
 %\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
 %\setlist[enumerate, 1]{label=\asbuk*),ref=\asbuk*}
+% \setlist[enumerate, 1]{label=\alph*),ref=\alph*}
 
 
 
@@ -281,6 +282,16 @@ numbered=no
 
 \section{Day 1. Classic binomial and multinomial identities}
 
+\subsection*{Planned entrance quiz :)}
+
+\begin{enumerate}
+\item How many ways are to order $6$ persons in a queue?
+\item The box contains $50$ balls numbered from $1$ to $50$. We draw $6$ balls without replacement and write down the resulting sequence of numbers.
+How many different sequences are possible?
+\item I have $5$ yellow books and $7$ red books. I want to place them on my bookshelf and I would like to place yellow books to the left of red books. 
+How many book orders are possible?
+\end{enumerate}
+
 
 \begin{definition}
     Factorial of $n$, denoted by $n!$, is the number of ways to put $n$ distinct objects in a queue. 
@@ -425,17 +436,19 @@ Obtain closed form expressions for:
 \begin{exercise}
 Hockey-sticks plus idea from linear algebra!
 
-Decompose $n^2 + 2n + 5$ using $n \choose 0$, $n \choose 1$, $n \choose 2$ as the basis. 
+\begin{enumerate}[label=\alph*)]
+\item Decompose $n^2 + 2n + 5$ using $n \choose 0$, $n \choose 1$, $n \choose 2$ as the basis. 
 
-Find the sum 
+\item Find the sum 
 \[
 \sum_{k=2}^{2026} {k^2 + 2k + 5}.
 \]
 
-Using similar trick find the sums
+\item Using similar trick find the sums
 \[
 \sum_{k=1}^{n} {5k^2 + 4k}, \quad \sum_{k=1}^{n} {k^3 + 2k^2}.
 \]
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -474,22 +487,27 @@ Hint: differentiation may help you.
 \begin{exercise}
 Be brave, really brave! 
 
-Take a deep breath and calculate 
+\begin{enumerate}[label=\alph*)]
+\item Take a deep breath! 
+\item Calculate 
 \[
 {-1 \choose 3}, \quad {-5 \choose 5},\quad  {1.5 \choose 3}, \quad  
 {-1/2 \choose 4}, \quad  {1/3 \choose k}, \quad  {-1/2 \choose n}. 
 \]
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Simplify 
+\begin{enumerate}[label=\alph*)]
+\item Simplify 
 \[
 {-1/2 \choose 3} + {-1/2 \choose 4}.
 \]
 
-Draw the Pascal's triangle starting from $-1/2 \choose 0$. 
+\item Draw the Pascal's triangle (the whole half-plane!) starting from $-1/2 \choose 0$. 
 
-Draw the Pascal's triangle starting from $1/3 \choose 0$. 
+\item Draw the Pascal's triangle (the whole half-plane!) starting from $1/3 \choose 0$. 
+\end{enumerate}
 \end{exercise}
 
 
@@ -514,34 +532,23 @@ Hint: for a honest proof consider the binomial expansion of $(1+x)^10$, $(1+x)^{
 \begin{exercise}
 Homage to Newton. 
 
-Write the Taylor expansion at $x=0$ for $(1 - x^2)^{1/2}$.
-
-Visually (or analytically if you wish) find the integral
+\begin{enumerate}[label=\alph*)]
+\item Write the Taylor expansion at $x=0$ for $(1 - x^2)^{1/2}$.
+\item Visually (or analytically if you wish) find the integral
 \[
 \int_{-1}^1 (1 - x^2)^{1/2}.
 \]
 
-Calculate the sums
+\item Calculate the sums
 \[
 {1/2 \choose 0} - \frac{1}{3}{1/2 \choose 1} + \frac{1}{5} {1/2 \choose 2} + \dots
 \]
 \[
 \sum_{k=2}^{\infty} \frac{1}{2k+1} \frac{(2k - 3)!!}{(2k)!!}
 \]
+\end{enumerate}
 \end{exercise}
 
-
-
-\newpage
-\subsection*{Planned entrance quiz :)}
-
-\begin{enumerate}
-\item How many ways are to order $6$ persons in a queue?
-\item The box contains $50$ balls numbered from $1$ to $50$. We draw $6$ balls without replacement and write down the resulting sequence of numbers.
-How many different sequences are possible?
-\item I have $5$ yellow books and $7$ red books. I want to place them on my bookshelf and I would like to place yellow books to the left of red books. 
-How many book orders are possible?
-\end{enumerate}
 
 
 \subsection*{Home assignment-1:}
@@ -593,6 +600,25 @@ You are more than welcome to solve other exercises that we skipped. Starred exer
 
 \section{Day 2. Wandermonde's identity and beyond}
 
+\begin{comment}
+\newpage
+\subsection*{Day 2 welcome quiz!}
+
+\begin{enumerate}
+    \item Decompose the function $h(k) = 2k^2 + k$ using the binomial coefficient basis $k \choose 0$, $k \choose 1$ and $k \choose 2$.
+    \item Let's play hockey! Find the sum 
+    \[
+    \sum_{k=2}^{1000} {3 {k \choose 0} - 2 {k \choose 1} + 3 {k \choose 2}}.
+    \]
+    Hint: do not forget to bring money back to the bank if you borrow!
+    \item Find the value 
+    \[
+    {1/3 \choose 2} + {1/3 \choose 3} + {4/3 \choose 2}.
+    \]
+\end{enumerate}
+\newpage
+\end{comment}
+
 \subsection*{Wandermonde's identity}
 
 \begin{exercise}
@@ -623,12 +649,40 @@ Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
 \begin{exercise}
 A bridge hand (random $13$ cards out of $52$-card standard deck) is dealt. 
 
-What is the probability that the hand contains no spades? 
-
-What is the probability that the hand contains exactly $5$ hearts? 
-
-What is the probability that the hand contains at most two aces? 
+\begin{enumerate}[label=\alph*)]
+\item What is the probability that the hand contains no spades? 
+\item What is the probability that the hand contains exactly $5$ hearts? 
+\item What is the probability that the hand contains at most two aces? 
+\end{enumerate}
 \end{exercise}
+
+
+\begin{exercise}
+Wandermonde-like identities in a funny notation.
+Here I intentionally omit the running index $i$, I write the first summation term and specify with $\uparrow$ and $\downarrow$ which terms goes up or down in the sum. 
+\begin{enumerate}[label=\alph*)]
+\item Simplify and rewrite in a standard notation
+% n persons: k to chill, (n-k) to work on two types of work: A, B
+\[
+\sum {n \choose 0^{\uparrow}} {n^{\downarrow} \choose k}.
+\]
+\item Simplify and rewrite in a standard notation
+% a + n + 1 chairs in total: a hard working students, b lazy students and 1 TA. 
+% we put them in a specified order hard working students, TA, lazy students. 
+% {a+n+1 \choose a + b + 1} ways in total
+% sum is split by the number of chairs before and after TA
+\[
+\sum {a^{\uparrow} \choose a} {n^{\downarrow} \choose k}.
+\]
+\item Simplify and rewrite in a standard notation
+% (n+b) persons: b boys, n girls, we need to choose k persons.
+\[
+\sum {b \choose 0^{\uparrow}} {n \choose k^{\downarrow}}.
+\]
+\end{enumerate}
+\end{exercise}
+
+
 
 \begin{exercise}
 Simplify 
@@ -672,6 +726,115 @@ Simplify
 {n \choose 1} - 2 {n \choose 2} + 3 {n \choose 3} - 4 {n \choose 4} + \dots + (-1)^n n{n \choose n};
 \]
 \end{exercise}
+
+
+\subsection*{Stars and bars}
+
+\begin{exercise}
+There are $20$ chairs in a row and $7$ students. Each student needs one chair to sit down. 
+We do care only about which chairs are occupied.
+
+\begin{enumerate}[label=\alph*)]
+    \item In how many ways chairs can be occupied? 
+    \item In how many ways chairs can be occupied if there should be at least one empty chair between occupied chairs?
+    \item In how many ways chairs can be occupied if there should be at least two empty chairs between occupied chairs?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+I have four bags of different colors and $20$ identical marble stones. 
+
+\begin{enumerate}[label=\alph*)]
+    \item In how many different ways can I put marbles into bags?
+    \item In how many different ways can I put marbles into bags if there should be no empty bags?
+\end{enumerate}
+\end{exercise}
+
+\begin{theorem}[Stars and bars theorem]
+The number of ways to distribute $n$ identical objects into $k$ distinguishable bags is equal to
+\[
+{n + k - 1 \choose n} = {n + k - 1 \choose k - 1}.
+\]
+Hint: $n$ is the number of stars and $(k - 1)$ is the number of bars. 
+\end{theorem}
+
+\begin{exercise}
+There are $5$ types of post-cards sold at the post-office. 
+\begin{enumerate}[label=\alph*)]
+\item In how many different ways can I buy $12$ post-cards?
+\item In how many different ways can I buy $12$ post-cards if I would like to buy at least one post-card of every type?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Consider the equation $x_1 + x_2 + x_3 + x_4 = 2026$.
+
+\begin{enumerate}[label=\alph*)]
+\item How many solutions does it have if $x_1$, $x_2$, $x_3$ and $x_4$ are non-negative integers?
+\item How many solutions does it have if $x_1$, $x_2$, $x_3$ and $x_4$ are positive integers?
+\item How many solutions does it have if all $x_i$ are integers and $x_i \geq 2$ for all $i$?
+\item How many solutions does it have if all $x_i$ are integers and $x_i \geq i$ for all $i$?
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+There are $10$ standard indistinguishable dices. 
+
+\begin{enumerate}[label=\alph*)]
+    \item How many different combinations of scores are possible?
+    \item How many different combinations of scores are possible if at least one dice shows $6$?
+    \item How many different combinations of scores are possible if no dice shows $5$ nor $6$?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Stars, bars, circles and probability!
+
+Consider a well shuffled deck of $52$ cards. I open the cards one by one. 
+
+\begin{enumerate}[label=\alph*)]
+    \item How many cards on average I open to see the first Queen?
+    \item How many cards on average I open to see the third Ace?
+    \item What is expected number of cards between the third and the fourth King?
+    \item What is the probability that the third Ace will be the $20$-th card opened?
+    \item Write combinatorial identities hidden in a), b) and c).
+\end{enumerate}
+    
+\end{exercise}
+
+\section*{Visualize it}
+
+\begin{exercise}
+\begin{enumerate}[label=\alph*)]
+\item Express as a binomial coefficient and visualize the sum:
+\[
+1 + 2 + 3 + 4 + \dots + n.
+\]
+\item Visualize the Fuji-sum and simplify it!
+\[
+1 + 2 + 3  + \dots + (n-1) + n + (n-1) + \dots + 3 + 2 + 1.
+\]
+% pull-ups ladder?
+\item Recall the multiplication table for numbers from $1$ to $10$.
+Why the sum of all numbers is just 
+\[
+1^3 + 2^3 + 3^3 + \dots + 10^3?
+\]
+Simplify the sum!
+\end{enumerate}
+
+\end{exercise}
+
+
+
+
+
+% \subsection*{Inclusions and exclusions}
+
+
+% \subsection*{Proofs to DIE for}
+
 
 
 
