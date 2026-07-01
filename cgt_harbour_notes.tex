@@ -1043,6 +1043,49 @@ Initially my room is dark.
 What is the probability that my room will be dark after I press the button $100$ times?
 \end{exercise}
 
+\subsection*{Home assignment: day 3 $\to$ day 6}
+
+Deadline: 2026-07-06, 14:59. 
+
+\begin{enumerate}
+    \item Solve the recurrence equation: 
+    \[
+    a_n = (n + 1) + a_{n-1}, \quad a_1 = 100.
+    \]
+    Hint: recall that $1 + 2 + 3 + 4 + \dots + n = {n+1 \choose 2} = \frac{n(n+1)}{2}$.
+    \item Solve the reccurence equation:
+    \[
+    a_n + 5 a_{n-1} + 6 a_{n-2} = 0, \quad a_0 = 3, a_1 = 5.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    c_n = 2 \cdot c_{n-1} + 3, \quad c_1 = 20.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 7 a_{n-1} + 12 a_{n-2} = 6, \quad a_0 = 1, a_1 = 12.
+    \]
+     \item Watch a Veritasium video «This equation will change how you see the world»:
+
+    \url{https://youtu.be/ovJcsL7vyrk?si=kh8wjM2e6dgLSXzj}.
+\end{enumerate}
+
+
+\subsection*{Demo for the quiz on day 4}
+
+\begin{enumerate}
+    \item Solve the recurrence equation:
+    \[
+    b_n = \frac{n + 5}{n + 4} b_{n-1}, \quad b_1 = 100.
+    \]
+    \item Here $L$ is the lag operator and $x_n = 6^n$. 
+    Find the values
+    \[
+    (1 - 5L) x_n, \quad (1 - 6L)x_n, \quad (1-6L)(1 - 5L)x_n.
+    \]
+\end{enumerate}
+
+
 
 
 \section{Yet to discover}
