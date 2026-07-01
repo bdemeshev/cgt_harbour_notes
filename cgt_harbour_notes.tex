@@ -554,9 +554,7 @@ Homage to Newton.
 \subsection*{Home assignment-1:}
 
 \begin{enumerate}
-    \item 1.7(3) in the old enumeration:
-    
-    Simplify
+    \item Simplify
 \[
 \sum_{a + b + c = 100} {100 \choose a} \cdot {100-a \choose b}.
 \]
@@ -568,24 +566,18 @@ Homage to Newton.
     \]
     Hint: represent the general term $k^3$ as the sum of binomial coefficients and then use the hockey stick or Christmas stocking or boomerang!
 
-    \item 1.10(2) in the old enumeration:
-    
-    {[*]} Using hockey stick decomposition find the sums
+    \item  {[*]} Using hockey stick decomposition find the sums
     \[
     \sum_{k=1}^{n} {5k^2 + 4k}.
     \]
 
-    \item 1.19 in the old enumeration:
-
-    {[*]} Take a deep breath and calculate 
+    \item {[*]} Take a deep breath and calculate 
 \[
 {-1 \choose 3}, \quad {-5 \choose 5},\quad  {1.5 \choose 3}, \quad  
 {-1/2 \choose 4}, \quad  {1/3 \choose k}, \quad  {-1/2 \choose n}. 
 \]
 
-    \item 1.21 in the old enumeration:
-    
-    Write the Taylor expansion at $x = 0$ for 
+    \item Write the Taylor expansion at $x = 0$ for 
 \[
 \frac{1}{1 - x}, \quad  (1 + x)^{-5}, \quad  (1 + x)^{-1/2}, \quad  
 (1 + 3x)^{1/3}, \quad  (1 - 5x)^{1/2}.
@@ -598,7 +590,7 @@ Homage to Newton.
 
 You are more than welcome to solve other exercises that we skipped. Starred exercises will be on the quiz next day. 
 
-\section{Day 2. Wandermonde's identity and beyond}
+\section{Day 2. Stars, bars and Gauss summation trick}
 
 \subsection*{Day 2 welcome quiz!}
 
@@ -614,79 +606,6 @@ You are more than welcome to solve other exercises that we skipped. Starred exer
     {1/3 \choose 2} + {1/3 \choose 3} + {4/3 \choose 2}.
     \]
 \end{enumerate}
-
-\subsection*{Wandermonde's identity}
-
-\begin{exercise}
-Simplify 
-\[
-{a \choose 0}{b \choose m} + {a \choose 1}{b \choose m-1} + {a \choose 2}{b \choose m-2} + \dots + {a \choose m}{b \choose 0}.
-\]
-\[
-{a \choose 0}{m \choose 0} + {a \choose 1}{m \choose 1} + {a \choose 2}{m \choose 3} + \dots + {a \choose m}{m \choose m}.
-\]
-\[
-{a \choose 0}^2 + {a \choose 1}^2  + {a \choose 2}^2 + \dots + {a \choose a}^2.
-\]
-\end{exercise}
-
-\begin{exercise}
-There are $n = 500$ fishes in the pond, $t = 30$ of them are tagged. You capture $c = 5$ fishes at random without replacement. 
-Let the random variable $Y$ be the number of captured tagged fishes. 
-Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
-\end{exercise}
-
-\begin{exercise}
-There are $n = 24$ candies in the jar, $14$ with orange flavour and $10$ with ananas flavour.
-Your take $6$ candies at random. Let $Y$ be the number of candies with orange flavour you picked. 
-Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
-\end{exercise}
-
-\begin{exercise}
-A bridge hand (random $13$ cards out of $52$-card standard deck) is dealt. 
-
-\begin{enumerate}[label=\alph*)]
-\item What is the probability that the hand contains no spades? 
-\item What is the probability that the hand contains exactly $5$ hearts? 
-\item What is the probability that the hand contains at most two aces? 
-\end{enumerate}
-\end{exercise}
-
-
-\begin{exercise}
-Wandermonde-like identities in a funny notation.
-Here I intentionally omit the running index $i$, I write the first summation term and specify with $\uparrow$ and $\downarrow$ which terms goes up or down in the sum. 
-\begin{enumerate}[label=\alph*)]
-\item Simplify and rewrite in a standard notation
-% n persons: k to chill, (n-k) to work on two types of work: A, B
-\[
-\sum {n \choose 0^{\uparrow}} {n^{\downarrow} \choose k}.
-\]
-\item Simplify and rewrite in a standard notation
-% a + n + 1 chairs in total: a hard working students, b lazy students and 1 TA. 
-% we put them in a specified order hard working students, TA, lazy students. 
-% {a+n+1 \choose a + b + 1} ways in total
-% sum is split by the number of chairs before and after TA
-\[
-\sum {a^{\uparrow} \choose a} {n^{\downarrow} \choose k}.
-\]
-\item Simplify and rewrite in a standard notation
-% (n+b) persons: b boys, n girls, we need to choose k persons.
-\[
-\sum {b \choose 0^{\uparrow}} {n \choose k^{\downarrow}}.
-\]
-\end{enumerate}
-\end{exercise}
-
-
-
-\begin{exercise}
-Simplify 
-\[
-\sum_{a + b + c = k}{n_1 \choose a}{n_2 \choose b}{n_3 \choose c}. % {n_1 + n_2 + n_3 \choose k}
-\]
-\end{exercise}
-
 
 
 
@@ -868,25 +787,345 @@ Deadline: 2026-07-03, 16:59.
 \end{enumerate}
 
 
+
 \subsection*{Demo for the quiz on day 3}
 
 \begin{enumerate}
+
     \item Using Gauss summation trick or otherwise find the sum 
     \[
     3 {n \choose 1} + 5 {n \choose 2} + 7 {n \choose 3} + \dots + (2n + 1) {n \choose n}.
     \]
     \item Consider the equation $a + b + c = 100$ with integers $a \geq 3$, $b \geq 2$, $c\geq 5$.
-    
+
     How many solutions are there?
+    
 \end{enumerate}
 
+\section{Day 3. Recurrence relations}
+
+\begin{comment}
+\subsection*{Quiz day 3}
+
+\begin{enumerate}
+
+    \item Using Gauss summation trick or otherwise find the sum 
+    \[
+    -5{n\choose 0} -3 {n \choose 1} -1 \cdot {n \choose 2} + 1 \cdot {n \choose 3} + \dots + (2n - 5) {n \choose n}.
+    \]
+    \item Consider the equation $a + b + c = 10$ with integers $a \geq 2$, $b \geq 1$, $c\geq 3$.
+
+    \begin{enumerate}
+        \item How many solutions are there?
+        \item Which solution would you encode as $\star \mid \, \mid \star\star\star$?
+    \end{enumerate}
+\end{enumerate}
+\end{comment}
 
 
-% \subsection*{Inclusions and exclusions}
+\begin{exercise}
+\begin{enumerate}[label=\alph*)]
+    Recurrence equations starter pack :)
+    
+    \item Solve the reccurence equation:
+    \[
+    a_n = a_{n-1} + 3, \quad a_1 = 20.
+    \]
+
+    \item Solve the reccurence equation:
+    \[
+    b_n = 3 \cdot b_{n-1}, \quad b_1 = 20.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    c_n = (n+3) \cdot c_{n-1}, \quad c_1 = 20.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    d_n = n+3  + d_{n-1}, \quad d_1 = 20.
+    \]
+    \item Solve the recurrence equation:
+    \[
+    e_n = n^2 - 3n + 2  + e_n, \quad e_1 = 20.
+    \]
+    \item Solve the recurrence equation:
+    \[
+    f_n = (n^2 - 3n + 2) f_n, \quad f_1 = 20.
+    \]
+    \item Solve the recurrence equation:
+    \[
+    g_n = \frac{n+2}{n+1} g_n, \quad g_1 = 20.
+    \]
+    \item Solve the recurrence equation:
+    \[
+    h_n = \frac{1}{n^2 + n} + h_n, \quad h_1 = 20.
+    \]
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Gauss trick with substraction!
+    \begin{enumerate}[label=\alph*)]
+        \item Find the sum
+        \[
+        S = 2 + 2 \cdot (1/3) + 2 \cdot (1/3)^2 + 2 \cdot (1/3)^3 + \dots
+        \]
+        \item Solve the recurrence equation 
+        \[
+        S_n = S_{n-1} + 3 \cdot (1/5)^n, \quad S_0 = 0.
+        \]
+        \item Solve the recurrence equation 
+        \[
+        S_n = S_{n-1} + n \cdot (1/5)^n, \quad S_0 = 0.
+        \]
+    \end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+You draw $n$ lines on a plane, they split the plane into some number of regions. 
+\begin{enumerate}[label=\alph*)]
+    \item What is the minimal number of regions?
+    \item What is the maximal number of regions?
+\end{enumerate}
+\end{exercise}
 
 
-% \subsection*{Proofs to DIE for}
+\begin{idea}
+    Consider the equation 
+    \[
+    x_t + \alpha_1 x_{t-1} + \alpha_2 x_{t-2} = \textrm{poly(t)}.
+    \]
+    The solution can be always represented as a sum or product of some geometric series and polynomials.
+\end{idea}
 
+% idea: first we start by guessing polynomial solution and then we simplify to homogeneous!
+
+\begin{exercise}
+Unique root case. 
+\begin{enumerate}[label=\alph*)]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 5 a_{n-1} + 6 a_{n-2} = 0, \quad a_0 = 3, a_1 = 5.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 7 a_{n-1} + 12 a_{n-2} = 6, \quad a_0 = 1, a_1 = 12.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 8 a_{n-1} + 15 a_{n-2} = 8n - 22 , \quad a_0 = 5, a_1 = 22.
+    \]
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    % Consider the Fibonacci numbers $F_n$.
+    We start with one pair of young rabbits $F_1 = 1$. 
+    It takes one period of time for a pair of rabbits to mature. 
+    Every mature pair of rabbits in one period of time will give birth to a new young pair of rabbits. 
+
+    \begin{enumerate}[label=\alph*)]
+        \item Find $F_2$, $F_3$, $F_4$, $F_5$.
+        \item Deduce the recurrence relation for $F_n$.
+        \item Find the general formula for $F_n$.
+        \item Which term in the general formula can be ignored for the big $n$?
+        \item Guess and prove formulas for 
+        \[
+        \sum_{k=0}^n F_k, \quad \sum_{k=0}^n F_{2k}, \quad \sum_{k = 1}^n F_{2k-1}, \quad F_{n+1} F_{n-1} - F_n^2.
+        \]
+        \item Which of the following formulas are valid?
+        \[
+        F_{m + n} = F_m F_{n+1} + F_{m-1} F_n
+        \]
+        \[
+        F_n^2 + F_{n+1}^2 = F_{2n+1}
+        \]
+        \[
+        F_{n+1}^2 - F_{n-1}^2 = F_{2n}
+        \]
+        \[
+        \sum_{k=0}^n F_k^2 = F_n F_{n+1}.
+        \]
+    \end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+Unique complex root case. 
+\begin{enumerate}[label=\alph*)]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 4 a_{n-1} + 13 a_{n-2} = 0, \quad a_0 = 4, a_1 = 2.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 4 a_{n-1} + 13 a_{n-2} = 20, \quad a_0 = 6, a_1 = 4.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    a_n + 9 a_{n-2} = 10n - 8, \quad a_0 = 7, a_1 = 8.
+    \]
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+    The mighty lag operator!
+
+    Let $L$ be the lag operator and $\Delta = 1 - L$. Consider the sequences $x_n = 5^n$, $y_n = n\cdot 5^n$ and $z_n = 3^n$.
+    \begin{enumerate}[label=\alph*)]
+        \item Find $(1 - 3L)x_n$, $\Delta x_n$, $(1 - 5L)x_n$.
+        \item Find $\Delta (1 - 3L) x_n$, $\Delta (1- 5L)x_n$, $(1 - 5L)^2 x_n$.
+        \item Find $(1 - 3L)y_n$, $\Delta y_n$, $(1 - 5L)y_n$.
+        \item Find $\Delta (1 - 3L) y_n$, $\Delta (1- 5L)y_n$, $(1 - 5L)^2 y_n$.
+        \item Find $(1 - 3 L)(1 - 5L) x_n$ and $(1 - 3L)(1 - 5L) z_n$.
+        \item Rewrite the equation $a_t - 7a_{t-1} + 12 a_{t-2} = 0$ using lag operator. 
+    \end{enumerate}
+
+Warning! Remember that $(1 - 3L)$ or $(1 - 5L)$ is not a number! Lag operator is just a convinient notation to shift index!
+\end{exercise}
+
+
+\begin{exercise}
+Double root case. 
+\begin{enumerate}[label=\alph*)]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 8 a_{n-1} + 16 a_{n-2} = 0, \quad a_0 = 3, a_1 = 0.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 4 a_{n-1} + 13 a_{n-2} = 20, \quad a_0 = 6, a_1 = 4.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    q_n - 6 q_{n-1} + 9q_{n-2} = 8n - 20, \quad q_0 = 2, a_1 = 12.
+    \]
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+    Now the systems!
+
+    \begin{enumerate}[label=\alph*)]
+    \item Solve the recurrence equation:
+    \[
+    \begin{cases}
+    a_n = 3a_{n-1} + 2b_{n-1} - 4, \\
+    b_n = 2a_{n-1} + 3b_{n-1} - 4, \\
+    a_0 = 1, \quad b_0 = 0.
+    \end{cases}
+    \]
+    \item Solve the recurrence equation:
+    \[
+    \begin{cases}
+    a_n = 3a_{n-1} - 2b_{n-1} - 4, \\
+    b_n = - 2a_{n-1} + 3b_{n-1} + 4, \\
+    a_0 = 1, \quad b_0 = 0.
+    \end{cases}
+    \]
+    \end{enumerate}
+
+\end{exercise}
+
+% старушка 
+
+% копилки с ключами
+
+\begin{exercise}
+I have a broken light switch button in my room. 
+The switch button should turn the light on if the light is off and vice versa.
+On the first press the button works with probability $1/2$, on the second press — with probability $1/3$, on the third one — with probability $1/4$ and so on.
+Initially my room is dark.
+
+What is the probability that my room will be dark after I press the button $100$ times?
+\end{exercise}
+
+
+
+\section{Yet to discover}
+
+
+\subsection*{Inclusions and exclusions}
+
+
+\subsection*{Proofs to DIE for}
+
+
+
+\subsection*{Wandermonde's identity}
+
+\begin{exercise}
+Simplify 
+\[
+{a \choose 0}{b \choose m} + {a \choose 1}{b \choose m-1} + {a \choose 2}{b \choose m-2} + \dots + {a \choose m}{b \choose 0}.
+\]
+\[
+{a \choose 0}{m \choose 0} + {a \choose 1}{m \choose 1} + {a \choose 2}{m \choose 3} + \dots + {a \choose m}{m \choose m}.
+\]
+\[
+{a \choose 0}^2 + {a \choose 1}^2  + {a \choose 2}^2 + \dots + {a \choose a}^2.
+\]
+\end{exercise}
+
+\begin{exercise}
+There are $n = 500$ fishes in the pond, $t = 30$ of them are tagged. You capture $c = 5$ fishes at random without replacement. 
+Let the random variable $Y$ be the number of captured tagged fishes. 
+Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
+\end{exercise}
+
+\begin{exercise}
+There are $n = 24$ candies in the jar, $14$ with orange flavour and $10$ with ananas flavour.
+Your take $6$ candies at random. Let $Y$ be the number of candies with orange flavour you picked. 
+Find the probabilities $\P(Y = 0)$, $\P(Y = 1)$, $\P(Y = 2)$, $\P(Y = y)$.
+\end{exercise}
+
+\begin{exercise}
+A bridge hand (random $13$ cards out of $52$-card standard deck) is dealt. 
+
+\begin{enumerate}[label=\alph*)]
+\item What is the probability that the hand contains no spades? 
+\item What is the probability that the hand contains exactly $5$ hearts? 
+\item What is the probability that the hand contains at most two aces? 
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+Wandermonde-like identities in a funny notation.
+Here I intentionally omit the running index $i$, I write the first summation term and specify with $\uparrow$ and $\downarrow$ which terms goes up or down in the sum. 
+\begin{enumerate}[label=\alph*)]
+\item Simplify and rewrite in a standard notation
+% n persons: k to chill, (n-k) to work on two types of work: A, B
+\[
+\sum {n \choose 0^{\uparrow}} {n^{\downarrow} \choose k}.
+\]
+\item Simplify and rewrite in a standard notation
+% a + n + 1 chairs in total: a hard working students, b lazy students and 1 TA. 
+% we put them in a specified order hard working students, TA, lazy students. 
+% {a+n+1 \choose a + b + 1} ways in total
+% sum is split by the number of chairs before and after TA
+\[
+\sum {a^{\uparrow} \choose a} {n^{\downarrow} \choose k}.
+\]
+\item Simplify and rewrite in a standard notation
+% (n+b) persons: b boys, n girls, we need to choose k persons.
+\[
+\sum {b \choose 0^{\uparrow}} {n \choose k^{\downarrow}}.
+\]
+\end{enumerate}
+\end{exercise}
+
+
+
+\begin{exercise}
+Simplify 
+\[
+\sum_{a + b + c = k}{n_1 \choose a}{n_2 \choose b}{n_3 \choose c}. % {n_1 + n_2 + n_3 \choose k}
+\]
+\end{exercise}
 
 
 
