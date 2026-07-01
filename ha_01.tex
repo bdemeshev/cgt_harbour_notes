@@ -1,0 +1,199 @@
+% arara: xelatex
+\documentclass[12pt]{article}
+
+% \usepackage{physics}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage{tikzducks}
+
+\usepackage{tikz} % картинки в tikz
+\usetikzlibrary{shapes, arrows, positioning}
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath, amsfonts, amssymb} % куча стандартных математических плюшек
+
+\usepackage{comment}
+
+\usepackage[top=2cm, left=1.2cm, right=1.2cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+\usepackage{url} % to use \url{link to web}
+
+\usepackage{xcolor}   % для цвета текста
+\usepackage{ulem}     % для зачёркивания (\sout)
+
+\usepackage[symbol]{footmisc}
+
+\newcommand{\smallduck}{\begin{tikzpicture}[scale=0.3]
+    \duck[
+        cape=black,
+        hat=black,
+        mask=black
+    ]
+    \end{tikzpicture}}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Harbour.space}
+\chead{}
+\rhead{HA1}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{tcolorbox} % рамочки!
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos - печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\setcounter{MaxMatrixCols}{20}
+% by crazy default pmatrix supports only 10 cols :)
+
+
+\usepackage{fontspec}
+\usepackage{libertine}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+
+\usetikzlibrary{automata, positioning, arrows.meta, calc, shapes.multipart}
+
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+% \setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+% \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+% \setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+\DeclareMathOperator{\Corr}{\mathbb{C}orr}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\row}{row}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+% \DeclareMathOperator{\tr}{trace}
+\DeclareMathOperator{\card}{card}
+
+\DeclareMathOperator{\Convex}{Convex}
+\DeclareMathOperator{\plim}{plim}
+
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cF}{\mathcal{F}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\hb}{\hat{\beta}}
+\newcommand{\dPois}{\mathrm{Pois}}
+\newcommand{\dUnif}{\mathrm{Unif}}
+
+\usepackage{mathtools}
+
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\scalp}{\langle}{\rangle}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+
+
+\begin{document}
+
+%Madame de Pompadour%\footnote{official chief mistress of King Louis XV} 
+%was born exactly 204 years earlier, on 29 December 1721. 
+%Her original name was Jeanne Antoinette Poisson.
+
+
+
+
+
+\subsection*{Home assignment: day 1 $\to$ day 4}
+
+\begin{enumerate}
+    \item Simplify
+\[
+\sum_{a + b + c = 100} {100 \choose a} \cdot {100-a \choose b}.
+\]
+    \item 1.9(2) in the old enumeration:
+
+    Find explicit formula for the sum 
+    \[
+    1^3 + 2^3 + \dots + n^3.
+    \]
+    Hint: represent the general term $k^3$ as the sum of binomial coefficients and then use the hockey stick or Christmas stocking or boomerang!
+
+    \item  {[*]} Using hockey stick decomposition find the sums
+    \[
+    \sum_{k=1}^{n} {5k^2 + 4k}.
+    \]
+
+    \item {[*]} Take a deep breath and calculate 
+\[
+{-1 \choose 3}, \quad {-5 \choose 5},\quad  {1.5 \choose 3}, \quad  
+{-1/2 \choose 4}, \quad  {1/3 \choose k}, \quad  {-1/2 \choose n}. 
+\]
+
+    \item Write the Taylor expansion at $x = 0$ for 
+\[
+\frac{1}{1 - x}, \quad  (1 + x)^{-5}, \quad  (1 + x)^{-1/2}, \quad  
+(1 + 3x)^{1/3}, \quad  (1 - 5x)^{1/2}.
+\]
+
+    \item Watch a Veritasium video «Newton changed the game»:
+
+    \url{https://youtu.be/gMlf1ELvRzc?si=VASoVKQj3Pk-wstA}.
+\end{enumerate}
+
+You are more than welcome to solve other exercises that we skipped. Starred exercises will be on the quiz next day. 
+
+
+\end{document}
+
