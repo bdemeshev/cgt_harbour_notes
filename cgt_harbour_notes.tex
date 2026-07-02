@@ -62,13 +62,18 @@
 \pagestyle{fancy}
 \lhead{}
 \chead{}
-\rhead{}
+\rhead{}    %\shuffleducks
+    %\begin{tikzpicture}[scale=0.5] 
+%        \duck[signpost=\scalebox{0.6}{\thepage}]%,\randomhead]
+%    \end{tikzpicture}
+
 \lfoot{}
 \cfoot{}
-\rfoot{}
+\rfoot{} 
 
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
 
 \usepackage{tcolorbox} % рамочки!
 \usepackage{graphicx} % рисунки
@@ -199,7 +204,13 @@
 % \renewcommand{\u}{u} % commented to avoid conflicts with base latex
 
 
-
+\newcommand{\randomduck}{\begin{tikzpicture}[scale=0.3]
+    \randuck[
+        cape=black,
+        hat=black,
+        mask=black
+    ]
+    \end{tikzpicture}}
 
 % выделение питоновских и других пакетов
 \newcommand{\sklearn}{sklearn}
@@ -1218,7 +1229,56 @@ Let $e_n$ be your total expected payoff if there are $n$ dollars in the hat now.
 \end{exercise}
 
 
+\subsection*{Home assignment: day 4 $\to$ day 7}
+
+Deadline: 2026-07-07, 14:59. 
+
+\begin{enumerate}
+    \item Solve the recurence equation:
+    \[
+    a_n + 6 a_{n-1} + 9 a_{n-2} = 0, \quad a_0 = 5, a_1 = 10.
+    \]
+    \item Solve the recurence equation:
+    \[
+    c_n + 6 c_{n-1} + 10 c_{n-2} = 0, \quad c_0 = 0, c_1 = 10.
+    \]
+    \item Solve the recurrence equation: 
+    \[
+    a_n = (n + 5) a_{n-1}, \quad a_1 = 100.
+    \]
+    You may certainly use factorial in your answer! 
+    \item I enter a casino in Las Vegas with $50$ tokens. I play the roulette.
+I always bet one token on black. I will leave the casino when my fortune will be $70$ tokens or $0$ tokens. 
+
+In a typical Las Vegas roulette there are $38$ pockets: $18$ black pockets, $18$ red pockets, one zero and one double zero.
+Let $p_n$ be the probability that I will leave the casino as winner if I have $n$ tokens now. 
+\begin{enumerate}[label=\alph*)]
+    \item What are the initial conditions $p_0$ and $p_{70}$?
+    \item Build the recurrence equation for $p_n$. 
+    \item Solve the recurrence equation for $p_n$.
+    \item Evaluate $p_{50}$ up to $2$ digits. 
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Demo for the quiz on day 5}
+
+\begin{enumerate} 
+    \item Consider the recurrence equation $y_n - 7 y_{n-1} + 10 y_{n-2} = 0$.
+    
+    Find all solutions of the form $y_n = \lambda^n$.
+    \item You know that $r_n = c \cdot 2^n + d \cdot n \cdot 2^n + 4$ is the solution of some recurrence equation with initial conditions  $r_0 = 6$ and $r_1 = 10$.
+    
+    Find $c$ and $d$. 
+\end{enumerate}
+
+
+
+
+
+
 \section{Day 5. Binomial coefficients and recurrence relations recap}
+
+
 
 
 
