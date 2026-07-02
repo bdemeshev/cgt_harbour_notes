@@ -951,24 +951,6 @@ Unique root case.
 
 \end{exercise}
 
-\begin{exercise}
-Unique complex root case. 
-\begin{enumerate}[label=\alph*)]
-    \item Solve the reccurence equation:
-    \[
-    a_n - 4 a_{n-1} + 13 a_{n-2} = 0, \quad a_0 = 4, a_1 = 2.
-    \]
-    \item Solve the reccurence equation:
-    \[
-    a_n - 4 a_{n-1} + 13 a_{n-2} = 20, \quad a_0 = 6, a_1 = 4.
-    \]
-    \item Solve the reccurence equation:
-    \[
-    a_n + 9 a_{n-2} = 10n - 8, \quad a_0 = 7, a_1 = 8.
-    \]
-\end{enumerate}
-
-\end{exercise}
 
 \begin{exercise}
     The mighty lag operator!
@@ -1006,42 +988,6 @@ Double root case.
 
 \end{exercise}
 
-\begin{exercise}
-    Now the systems!
-
-    \begin{enumerate}[label=\alph*)]
-    \item Solve the recurrence equation:
-    \[
-    \begin{cases}
-    a_n = 3a_{n-1} + 2b_{n-1} - 4, \\
-    b_n = 2a_{n-1} + 3b_{n-1} - 4, \\
-    a_0 = 1, \quad b_0 = 0.
-    \end{cases}
-    \]
-    \item Solve the recurrence equation:
-    \[
-    \begin{cases}
-    a_n = 3a_{n-1} - 2b_{n-1} - 4, \\
-    b_n = - 2a_{n-1} + 3b_{n-1} + 4, \\
-    a_0 = 1, \quad b_0 = 0.
-    \end{cases}
-    \]
-    \end{enumerate}
-
-\end{exercise}
-
-% старушка 
-
-% копилки с ключами
-
-\begin{exercise}
-I have a broken light switch button in my room. 
-The switch button should turn the light on if the light is off and vice versa.
-On the first press the button works with probability $1/2$, on the second press — with probability $1/3$, on the third one — with probability $1/4$ and so on.
-Initially my room is dark.
-
-What is the probability that my room will be dark after I press the button $100$ times?
-\end{exercise}
 
 \subsection*{Home assignment: day 3 $\to$ day 6}
 
@@ -1084,6 +1030,170 @@ Deadline: 2026-07-06, 14:59.
     (1 - 5L) x_n, \quad (1 - 6L)x_n, \quad (1-6L)(1 - 5L)x_n.
     \]
 \end{enumerate}
+
+
+
+\section{Day 4. More reccurence equations}
+
+\begin{comment}
+\subsection*{Quiz day 4}
+
+\begin{enumerate}
+    \item Solve the recurrence equation:
+    \[
+    b_n = \frac{n + 3}{n + 2} b_{n-1}, \quad b_1 = 10.
+    \]
+    \item Here $L$ is the lag operator and $x_n = 2^n$. 
+    Find the values
+    \[
+    (1 - 3L) x_n, \quad (1 - 2L)x_n, \quad (1-2L)(1 - 3L)x_n.
+    \]
+\end{enumerate}
+
+
+\end{comment}
+
+
+\begin{exercise}
+Double root case. 
+\begin{enumerate}[label=\alph*)]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 8 a_{n-1} + 16 a_{n-2} = 0, \quad a_0 = 3, a_1 = 0.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 4 a_{n-1} + 13 a_{n-2} = 20, \quad a_0 = 6, a_1 = 4.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    q_n - 6 q_{n-1} + 9q_{n-2} = 8n - 20, \quad q_0 = 2, a_1 = 12.
+    \]
+\end{enumerate}
+
+\end{exercise}
+
+
+
+\begin{exercise}
+Unique complex root case. 
+\begin{enumerate}[label=\alph*)]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 4 a_{n-1} + 13 a_{n-2} = 0, \quad a_0 = 4, a_1 = 2.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    a_n - 4 a_{n-1} + 13 a_{n-2} = 20, \quad a_0 = 6, a_1 = 4.
+    \]
+    \item Solve the reccurence equation:
+    \[
+    a_n + 9 a_{n-2} = 10n - 8, \quad a_0 = 7, a_1 = 8.
+    \]
+\end{enumerate}
+
+\end{exercise}
+
+
+\begin{exercise}
+There are $n$ passengers boarding an intercity bus and standing in queue. 
+There are $n$ places and each passenger has its own place on the ticket. 
+The problem is that the first passenger in the queue is very nervous, he rushes in the bus and takes one place at random. 
+Each next passenger takes his seat according to the ticket if the seat is free. 
+And if his own seat is occupied each passenger takes a random free seat. 
+
+Let $p_n$ be the probability that the last passenger in the queue will get his seat. 
+\begin{enumerate}[label=\alph*)]
+    \item What is the initial conditions $p_{2}$?
+    \item Build the recurrence equation for $p_{n}$.
+    \item Guess the solution!
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+I have $100$ safes. Each safe can be closed without a key, but requires a specific unique key to be opened. 
+I randomly distribute $100$ keys into $100$ safes, one key per safe. 
+I leave $5$ safes open and I close other safes. So I have access to $5$ keys and I can use them to open other safes and inside these safes there are more keys\dots{ }
+
+Let's denote by $p_{kn}$ the probability that I can open all $n$ safes, given that in the beginning there are $k$ safes open and $(n-k)$ safes closed.
+\begin{enumerate}[label=\alph*)]
+    \item What are the initial conditions $p_{0n}$ and $p_{nn}$?
+    \item Build the recurrence equation for $p_{kn}$.
+    \item Guess the solution!
+\end{enumerate}
+Let's denote by $e_{kn}$ the expected number of open safes, given that in the beginning there are $k$ safes open and $(n-k)$ safes closed.
+\begin{enumerate}[resume]
+    \item What are the initial conditions $e_{0n}$ and $e_{nn}$?
+    \item Build the recurrence equation for $e_{kn}$.
+    \item Guess the solution!
+\end{enumerate}
+
+
+\end{exercise}
+
+
+\begin{exercise}
+I enter a casino in Monte Carlo with $50$ tokens. I play the roulette.
+I always bet one token on black. I will leave the casino when my fortune will be $70$ tokens or $0$ tokens. 
+
+In a typical Monte Carlo roulette there $18$ black pockets, $18$ red pockets and zero. 
+Let $p_n$ be the probability that I will leave the casino as winner if I have $n$ tokens now. 
+\begin{enumerate}[label=\alph*)]
+    \item What are the initial conditions $p_0$ and $p_{70}$?
+    \item Build the recurrence equation for $p_n$. 
+    \item Solve the recurrence equation and find $p_{50}$.
+    \item How the answers would change for Las Vegas roulette with zero and double zero pockets?
+    \item How the answers would change for an abstract fair casino with no zero nor double zero?
+\end{enumerate}
+Let $e_n$ be the expected number of spins before I leave the casino (as winner or as loser).
+\begin{enumerate}[resume]
+    \item What are the initial conditions $e_0$ and $e_{70}$?
+    \item Build the recurrence equation for $e_n$. 
+    \item Solve the recurrence equation and find $e_{50}$.
+    \item How the answers would change for Las Vegas roulette with zero and double zero pockets?
+    \item How the answers would change for an abstract fair casino with no zero nor double zero?
+\end{enumerate}
+
+    
+
+
+\end{exercise}
+
+
+\begin{exercise}
+I have a broken light switch button in my room. 
+The switch button should turn the light on if the light is off and vice versa.
+On the first press the button works with probability $1/2$, on the second press — with probability $1/3$, on the third one — with probability $1/4$ and so on.
+Initially my room is dark.
+
+What is the probability that my room will be dark after I press the button $100$ times?
+\end{exercise}
+
+
+
+\begin{exercise}
+    Now the systems!
+
+    \begin{enumerate}[label=\alph*)]
+    \item Solve the recurrence equation:
+    \[
+    \begin{cases}
+    a_n = 3a_{n-1} + 2b_{n-1} - 4, \\
+    b_n = 2a_{n-1} + 3b_{n-1} - 4, \\
+    a_0 = 1, \quad b_0 = 0.
+    \end{cases}
+    \]
+    \item Solve the recurrence equation:
+    \[
+    \begin{cases}
+    a_n = 3a_{n-1} - 2b_{n-1} - 4, \\
+    b_n = - 2a_{n-1} + 3b_{n-1} + 4, \\
+    a_0 = 1, \quad b_0 = 0.
+    \end{cases}
+    \]
+    \end{enumerate}
+
+\end{exercise}
 
 
 
