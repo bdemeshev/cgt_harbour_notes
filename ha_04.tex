@@ -1,0 +1,203 @@
+% arara: xelatex
+\documentclass[12pt]{article}
+
+% \usepackage{physics}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage{tikzducks}
+
+\usepackage{tikz} % картинки в tikz
+\usetikzlibrary{shapes, arrows, positioning}
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath, amsfonts, amssymb} % куча стандартных математических плюшек
+
+\usepackage{comment}
+
+\usepackage[top=2cm, left=1.2cm, right=1.2cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+\usepackage{url} % to use \url{link to web}
+
+\usepackage{xcolor}   % для цвета текста
+\usepackage{ulem}     % для зачёркивания (\sout)
+
+\usepackage[symbol]{footmisc}
+
+\newcommand{\smallduck}{\begin{tikzpicture}[scale=0.3]
+    \duck[
+        cape=black,
+        hat=black,
+        mask=black
+    ]
+    \end{tikzpicture}}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Harbour.space}
+\chead{}
+\rhead{Be happy! \smallduck}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{tcolorbox} % рамочки!
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos - печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\setcounter{MaxMatrixCols}{20}
+% by crazy default pmatrix supports only 10 cols :)
+
+
+\usepackage{fontspec}
+\usepackage{libertine}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+
+\usetikzlibrary{automata, positioning, arrows.meta, calc, shapes.multipart}
+
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+% \setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+% \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+% \setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+\DeclareMathOperator{\Corr}{\mathbb{C}orr}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\row}{row}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+% \DeclareMathOperator{\tr}{trace}
+\DeclareMathOperator{\card}{card}
+
+\DeclareMathOperator{\Convex}{Convex}
+\DeclareMathOperator{\plim}{plim}
+
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cF}{\mathcal{F}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\hb}{\hat{\beta}}
+\newcommand{\dPois}{\mathrm{Pois}}
+\newcommand{\dUnif}{\mathrm{Unif}}
+
+\usepackage{mathtools}
+
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\scalp}{\langle}{\rangle}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+
+
+\begin{document}
+
+%Madame de Pompadour%\footnote{official chief mistress of King Louis XV} 
+%was born exactly 204 years earlier, on 29 December 1721. 
+%Her original name was Jeanne Antoinette Poisson.
+
+
+
+
+
+\subsection*{Home assignment: day 4 $\to$ day 7}
+
+Deadline: 2026-07-07, 14:59. 
+
+\begin{enumerate}
+    \item Solve the recurence equation:
+    \[
+    a_n + 6 a_{n-1} + 9 a_{n-2} = 0, \quad a_0 = 5, a_1 = 10.
+    \]
+    \item Solve the recurence equation:
+    \[
+    c_n + 6 c_{n-1} + 10 c_{n-2} = 0, \quad c_0 = 0, c_1 = 10.
+    \]
+    \item Solve the recurrence equation: 
+    \[
+    a_n = (n + 5) a_{n-1}, \quad a_1 = 100.
+    \]
+    You may certainly use factorial in your answer! 
+    \item I enter a casino in Las Vegas with $50$ tokens. I play the roulette.
+I always bet one token on black. I will leave the casino when my fortune will be $70$ tokens or $0$ tokens. 
+
+In a typical Las Vegas roulette there are $38$ pockets: $18$ black pockets, $18$ red pockets, one zero and one double zero.
+Let $p_n$ be the probability that I will leave the casino as winner if I have $n$ tokens now. 
+\begin{enumerate}[label=\alph*)]
+    \item What are the initial conditions $p_0$ and $p_{70}$?
+    \item Build the recurrence equation for $p_n$. 
+    \item Solve the recurrence equation for $p_n$.
+    \item Evaluate $p_{50}$ up to $2$ digits. 
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Demo for the quiz on day 5}
+
+\begin{enumerate} 
+    \item Consider the recurrence equation $y_n - 7 y_{n-1} + 10 y_{n-2} = 0$.
+    
+    Find all solutions of the form $y_n = \lambda^n$.
+    \item You know that $r_n = c \cdot 2^n + d \cdot n \cdot 2^n + 4$ is the solution of some recurrence equation with initial conditions  $r_0 = 6$ and $r_1 = 10$.
+    
+    Find $c$ and $d$. 
+\end{enumerate}
+
+
+
+\end{document}
+
