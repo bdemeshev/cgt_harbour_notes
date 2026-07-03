@@ -6,9 +6,9 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
+    linkcolor=blue!80!black,
     filecolor=magenta,      
-    urlcolor=cyan,
+    urlcolor=blue,
     pdftitle={Overleaf Example},
     pdfpagemode=FullScreen,
     }
@@ -62,14 +62,17 @@
 \pagestyle{fancy}
 \lhead{}
 \chead{}
-\rhead{}    %\shuffleducks
-    %\begin{tikzpicture}[scale=0.5] 
-%        \duck[signpost=\scalebox{0.6}{\thepage}]%,\randomhead]
-%    \end{tikzpicture}
-
+\rhead{}    
 \lfoot{}
 \cfoot{}
-\rfoot{} 
+\rfoot{\shuffleducks
+    \begin{tikzpicture}[scale=0.4] 
+        \duck[umbrella=cyan, 
+        speech={\thepage},
+        bubblecolour=cyan!20!white,
+        laughing
+        ],  
+    \end{tikzpicture}} 
 
 
 %\renewcommand{\headrulewidth}{0.4pt}
@@ -115,9 +118,39 @@
 %\setlist[enumerate, 1]{label=\asbuk*),ref=\asbuk*}
 % \setlist[enumerate, 1]{label=\alph*),ref=\alph*}
 
-
-
+\usepackage{qrcode}
 \usepackage[bibencoding=auto, backend=biber, sorting=none, style=alphabetic]{biblatex}
+\usepackage{biblatex-ext-tabular}
+
+\usepackage{longtable}
+\newcolumntype{L}[1]{%
+  >{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\DeclareFieldFormat{qrurl}{%
+  \raisebox{\dimeval{-\height+\ht\strutbox}}{\qrcode{#1}}}
+
+\defbibtabular{bibtabular}
+  {\setlength{\LTpre}{0pt}%
+   \setlength{\LTpost}{0pt}%
+   \renewcommand*{\arraystretch}{2}%
+   \begin{longtable}{%
+   @{}
+   L{\labelalphawidth}
+   L{\dimexpr0.7\textwidth-0.7\labelalphawidth\relax}
+   L{\dimexpr0.3\textwidth-0.3\labelalphawidth\relax}
+   @{}}}
+  {\end{longtable}}
+  {\anchorlang{%
+     \printtext[labelalphawidth]{%
+       \printfield{labelprefix}%
+       \printfield{labelalpha}%
+       \printfield{extraalpha}}} &
+   \driver{} &
+   \plain{\printfield[qrurl]{url}}
+    \\}
+
+
+
 \addbibresource{cgt.bib}
 
 \graphicspath{{./figures}}
@@ -414,7 +447,10 @@ Here $a$, $b$ and $c$ are assumed non-negative integers.
 \subsection*{Hockey-stick identity}
 
 \begin{exercise}
-Hockey-stick identity, Christmas stocking identity, boomerang identity.
+Hockey-stick identity \begin{tikzpicture}[scale=0.4]
+    \duck[hockey=brown!70!black, 
+    crazyhair=red]
+\end{tikzpicture}, Christmas stocking identity, boomerang identity.
 
 Simplify
 \[
@@ -594,9 +630,10 @@ Homage to Newton.
 (1 + 3x)^{1/3}, \quad  (1 - 5x)^{1/2}.
 \]
 
-    \item Watch a Veritasium video «Newton changed the game»:
+    \item Watch a Veritasium video «Newton changed the game», \cite{veritasium2025newton}.
 
-    \url{https://youtu.be/gMlf1ELvRzc?si=VASoVKQj3Pk-wstA}.
+    \url{https://youtu.be/gMlf1ELvRzc?si=VASoVKQj3Pk-wstA},
+    \qrcode{https://youtu.be/gMlf1ELvRzc?si=VASoVKQj3Pk-wstA}.
 \end{enumerate}
 
 You are more than welcome to solve other exercises that we skipped. Starred exercises will be on the quiz next day. 
@@ -1022,9 +1059,9 @@ Deadline: 2026-07-06, 14:59.
     \[
     a_n - 7 a_{n-1} + 12 a_{n-2} = 6, \quad a_0 = 1, a_1 = 12.
     \]
-     \item Watch a Veritasium video «This equation will change how you see the world»:
+     \item Watch a Veritasium video «This equation will change how you see the world», \cite{veritasium2025equation}.
 
-    \url{https://youtu.be/ovJcsL7vyrk?si=kh8wjM2e6dgLSXzj}.
+    \url{https://youtu.be/ovJcsL7vyrk?si=kh8wjM2e6dgLSXzj}, \qrcode{https://youtu.be/ovJcsL7vyrk?si=kh8wjM2e6dgLSXzj}.
 \end{enumerate}
 
 
@@ -1373,8 +1410,9 @@ Simplify
 
 
 \newpage
-\addcontentsline{toc}{section}{Sources of wisdom}
-\printbibliography[heading=none]
-
+% \addcontentsline{toc}{section}{Sources of wisdom}
+%\printbibliography[heading=none]
+\section*{Sources of Wisdom}
+\printbibtabular[heading=none] % to print as a predesigned table
 
 \end{document}
