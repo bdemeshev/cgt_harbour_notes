@@ -1515,6 +1515,64 @@ Let $e_n$ be your total expected payoff if there are $n$ dollars in the hat now.
     \end{enumerate}
 \end{exercise}
 
+
+\subsection*{Home assignment: day 6 $\to$ day 9}
+
+% Deadline: 2026-07-09, 16:59. 
+
+\begin{enumerate}
+    \item Consider the recurrence equation 
+    \[
+    a_n = 3a_{n-1} + 5, \quad a_0 = 1.
+    \]
+
+    \begin{enumerate}
+        \item Find equation for the generating function $g(t)$.
+        \item Obtain $g(t)$ in a closed form. 
+        \item Extract coefficients $(a_n)$ from $g(t)$.
+    \end{enumerate}
+
+    \item Extract the sequence $(a_n)$ from the generating functions
+    \[
+    g(t) = \frac{1}{(1-t)^{50}}, \quad g(t) = \frac{1}{(1-3t)^{100}}.
+    \]
+
+    \item Find the generating function of the following sequences 
+    \[
+    (1, 67, 67^2, 67^3, 67^4, 67^5, \dots), \quad \left({5 \choose 0}, {6 \choose 1}, {7 \choose 2}, {8 \choose 3}, \dots \right).
+    \]
+
+    Hint: you don't need to solve equations, just recognize the patterns we have already seen. 
+
+    \item You know that the generating function $g(t)$ of some sequence $(a_0, a_1, a_2, \ldots)$ satisfies the equation 
+    \[
+    g(t) = 4-9t + (5t - 6t^2)g(t).
+    \]
+    \begin{enumerate}
+        \item Find $g(t)$.
+        \item By simply plugging some value of $t$ inside $g(t)$ find the sum
+        \[
+        \sum_{n=0}^{\infty} \frac{a_n}{100^n}.
+        \]
+    \end{enumerate}
+
+
+\end{enumerate}
+
+\subsection*{Demo for the quiz on day 7}
+
+\begin{enumerate} 
+    \item Extract the sequence $(a_n)$ from the generating functions:
+    \[
+    g(t) = \frac{1}{1 - 3t}, \quad g(t) = \frac{1}{1 + 7t}, \quad g(t) = \frac{t}{1 - 3t}.
+    \]
+    \item Decompose the fraction into a sum of more simple fractions
+    \[
+    g(t) = \frac{4 - 9t}{(1-2t)(1-3t)}.
+    \]
+\end{enumerate}
+
+
 \section{Day 7. Moorrreee generating functions}
 
 \begin{exercise}
