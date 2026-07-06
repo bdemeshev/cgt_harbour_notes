@@ -180,6 +180,7 @@
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\trace}{trace}
 \DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\coef}{coef}
 \DeclareMathOperator{\tr}{\trace}
 \DeclareMathOperator{\rk}{\rank}
 \DeclareMathOperator{\card}{card}
@@ -933,10 +934,12 @@ Deadline: 2026-07-03, 16:59.
 
 \begin{exercise}
 You draw $n$ lines on a plane, they split the plane into some number of regions. 
+Lines may or may not coincide. 
 \begin{enumerate}[label=\alph*)]
-    \item What is the minimal number of regions?
-    \item What is the maximal number of regions?
+    \item What is the minimal number of regions $a_n$?
+    \item What is the maximal number of regions $b_n$?
 \end{enumerate}
+Hint: start by finding $b_1$, $b_2$, then find the recurrence equation for $b_n$. 
 \end{exercise}
 
 
@@ -1144,42 +1147,6 @@ Unique complex root case.
 \end{exercise}
 
 
-\begin{exercise}
-There are $n$ passengers boarding an intercity bus and standing in queue. 
-There are $n$ places and each passenger has its own place on the ticket. 
-The problem is that the first passenger in the queue is very nervous, he rushes in the bus and takes one place at random. 
-Each next passenger takes his seat according to the ticket if the seat is free. 
-And if his own seat is occupied each passenger takes a random free seat. 
-
-Let $p_n$ be the probability that the last passenger in the queue will get his seat. 
-\begin{enumerate}[label=\alph*)]
-    \item What is the initial conditions $p_{2}$?
-    \item Build the recurrence equation for $p_{n}$.
-    \item Guess the solution!
-\end{enumerate}
-\end{exercise}
-
-\begin{exercise}
-I have $100$ safes. Each safe can be closed without a key, but requires a specific unique key to be opened. 
-I randomly distribute $100$ keys into $100$ safes, one key per safe. 
-I leave $5$ safes open and I close other safes. So I have access to $5$ keys and I can use them to open other safes and inside these safes there are more keys\dots{ }
-
-Let's denote by $p_{kn}$ the probability that I can open all $n$ safes, given that in the beginning there are $k$ safes open and $(n-k)$ safes closed.
-\begin{enumerate}[label=\alph*)]
-    \item What are the initial conditions $p_{0n}$ and $p_{nn}$?
-    \item Build the recurrence equation for $p_{kn}$.
-    \item Guess the solution!
-\end{enumerate}
-Let's denote by $e_{kn}$ the expected number of open safes, given that in the beginning there are $k$ safes open and $(n-k)$ safes closed.
-\begin{enumerate}[resume]
-    \item What are the initial conditions $e_{0n}$ and $e_{nn}$?
-    \item Build the recurrence equation for $e_{kn}$.
-    \item Guess the solution!
-\end{enumerate}
-
-
-\end{exercise}
-
 
 \begin{exercise}
 I enter a casino in Monte Carlo with $50$ tokens. I play the roulette.
@@ -1220,51 +1187,7 @@ What is the probability that my room will be dark after I press the button $100$
 
 
 
-\begin{exercise}
-You play a the following lottery with the casino. There is a hat on the table. 
-A fair dice is thrown until the game ends. 
-\begin{itemize}
-    \item If the dice shows one then you get $+1$ dollar immediately and the game continues. 
-    \item If the dice shows two then $+2$ dollars are added to the hat and the game continues. 
-    \item If the dice shows three then $+3$ dollars are added to the hat and the game continues.
-    \item If the dice shows four then the sum in the hat goes back to casino and the game continues.
-    \item If the dice shows five then the sum in the hat goes back to the casino and the game ends.
-    \item If the dice shows six then the game ends and you receive the content of the hat. 
-\end{itemize}
 
-Let $e_n$ be your total expected payoff if there are $n$ dollars in the hat now. 
-
-\begin{enumerate}
-    \item Build the recurrence equation for $e_n$.
-    \item Find the solution.
-    \item What is the price of one dollar in the hat in real dollars? What is the fair price to participate in this game?
-\end{enumerate}
-\end{exercise}
-
-
-\begin{exercise}
-    Now the systems!
-
-    \begin{enumerate}[label=\alph*)]
-    \item Solve the recurrence equation:
-    \[
-    \begin{cases}
-    a_n = 3a_{n-1} + 2b_{n-1} - 4, \\
-    b_n = 2a_{n-1} + 3b_{n-1} - 4, \\
-    a_0 = 1, \quad b_0 = 0.
-    \end{cases}
-    \]
-    \item Solve the recurrence equation:
-    \[
-    \begin{cases}
-    a_n = 3a_{n-1} - 2b_{n-1} - 4, \\
-    b_n = - 2a_{n-1} + 3b_{n-1} + 4, \\
-    a_0 = 1, \quad b_0 = 0.
-    \end{cases}
-    \]
-    \end{enumerate}
-
-\end{exercise}
 
 
 \subsection*{Home assignment: day 4 $\to$ day 7}
@@ -1314,11 +1237,319 @@ Let $p_n$ be the probability that I will leave the casino as winner if I have $n
 
 
 
-\section{Day 5. Binomial coefficients and recurrence relations recap}
+\section{Day 5. Systems of linear recurrence equations, examples from probability}
+
+
+\begin{exercise}
+    Now the systems!
+
+    \begin{enumerate}[label=\alph*)]
+    \item Solve the recurrence equation:
+    \[
+    \begin{cases}
+    a_n = 3a_{n-1} + 2b_{n-1} - 4, \\
+    b_n = 2a_{n-1} + 3b_{n-1} - 4, \\
+    a_0 = 1, \quad b_0 = 0.
+    \end{cases}
+    \]
+    \item Solve the recurrence equation:
+    \[
+    \begin{cases}
+    a_n = 3a_{n-1} - 2b_{n-1} - 4, \\
+    b_n = - 2a_{n-1} + 3b_{n-1} + 4, \\
+    a_0 = 1, \quad b_0 = 0.
+    \end{cases}
+    \]
+    \end{enumerate}
+
+\end{exercise}
 
 
 
+\begin{exercise}
+There are $n$ passengers boarding an intercity bus and standing in queue. 
+There are $n$ places and each passenger has its own place on the ticket. 
+The problem is that the first passenger in the queue is very nervous, he rushes in the bus and takes one place at random. 
+Each next passenger takes his seat according to the ticket if the seat is free. 
+And if his own seat is occupied each passenger takes a random free seat. 
 
+Let $p_n$ be the probability that the last passenger in the queue will get his seat. 
+\begin{enumerate}[label=\alph*)]
+    \item What is the initial conditions $p_{2}$?
+    \item Build the recurrence equation for $p_{n}$.
+    \item Guess the solution!
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+I have $100$ safes. Each safe can be closed without a key, but requires a specific unique key to be opened. 
+I randomly distribute $100$ keys into $100$ safes, one key per safe. 
+I leave $5$ safes open and I close other safes. So I have access to $5$ keys and I can use them to open other safes and inside these safes there are more keys\dots{ }
+
+Let's denote by $p_{kn}$ the probability that I can open all $n$ safes, given that in the beginning there are $k$ safes open and $(n-k)$ safes closed.
+\begin{enumerate}[label=\alph*)]
+    \item What are the initial conditions $p_{0n}$ and $p_{nn}$?
+    \item Build the recurrence equation for $p_{kn}$.
+    \item Guess the solution!
+\end{enumerate}
+Let's denote by $e_{kn}$ the expected number of open safes, given that in the beginning there are $k$ safes open and $(n-k)$ safes closed.
+\begin{enumerate}[resume]
+    \item What are the initial conditions $e_{0n}$ and $e_{nn}$?
+    \item Build the recurrence equation for $e_{kn}$.
+    \item Guess the solution!
+\end{enumerate}
+
+
+\end{exercise}
+
+
+\begin{exercise}
+You play a the following lottery with the casino. There is a hat on the table. 
+A fair dice is thrown until the game ends. 
+\begin{itemize}
+    \item If the dice shows one then you get $+1$ dollar immediately and the game continues. 
+    \item If the dice shows two then $+2$ dollars are added to the hat and the game continues. 
+    \item If the dice shows three then $+3$ dollars are added to the hat and the game continues.
+    \item If the dice shows four then the sum in the hat goes back to casino and the game continues.
+    \item If the dice shows five then the sum in the hat goes back to the casino and the game ends.
+    \item If the dice shows six then the game ends and you receive the content of the hat. 
+\end{itemize}
+
+Let $e_n$ be your total expected payoff if there are $n$ dollars in the hat now. 
+
+\begin{enumerate}
+    \item Build the recurrence equation for $e_n$.
+    \item Find the solution.
+    \item What is the price of one dollar in the hat in real dollars? What is the fair price to participate in this game?
+\end{enumerate}
+\end{exercise}
+
+
+\section{Day 6. Generating functions}
+
+\begin{idea}
+    Any sequence of numbers 
+    \[
+    (a_0, a_1, a_2, a_3, \dots)
+    \] 
+    can be written as a \emph{generating function}
+    \[
+    g(t) = a_0 + a_1 t^1 + a_2 t^2 + a_3 t^3 + \dots
+    \]
+
+    Other variants of a generating function may be also useful 
+    \[
+    m(t) = a_0 + a_1 \exp(t) + a_2 \exp(2t) + a_3 \exp(3t) + \dots
+    \]
+    or 
+    \[
+    e(t) = a_0 + a_1 t^1/1! + a_2 t^2/2! + a_3 t^3 / 3! + \dots
+    \]
+    or even 
+    \[
+    f(t) = a_0 + a_1 \cos(t) + a_2 \cos(2t) + a_3 \cos(3t) + \dots
+    \]
+\end{idea}
+
+
+\begin{definition}
+    We will denote by $\coef(g(t), t^k)$ the coefficient $a_k$ before the term $t^k$ in the expansion
+    \[
+    g(t) =  a_0 + a_1 t^1 + a_2 t^2 + a_3 t^3 + \dots + a_k t^k + \dots
+    \]
+\end{definition}
+
+\begin{exercise}
+    Master the extraction of coefficients!
+    \begin{enumerate}[label=\alph*)]
+        \item For the function $g(t) = (1 + t)^{100}$ find $\coef(g, t^2)$, $\coef(g, t^{50})$.
+        \item For the function $g(t) = 1/(1-t)$ find $\coef(g, t^2)$, $\coef(g, t^{50})$, $\coef(g, t^{2026})$.
+        \item For the function $g(t) = \frac{1}{t(t+1)}$ find $\coef(g, t^k)$.
+        \item For the function $g(t) = \sqrt{1 - t^2}$ find $\coef(g, t^{100})$ and $\coef(g, t^{101})$.
+        \item For the function $g(t) = (1+x^5+x^7)^{20}$ find $\coef(g, x^{17})$.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+    Do you understand how coefficients are related to derivatives?
+    \begin{enumerate}[label=\alph*)]
+        \item You know that $g(0) = 5$, $g'(0) = 7$, $g''(0) = 12$, $g'''(0) = 20$. Find $\coef(g, 1)$, $\coef(g, 1)$, $\coef(g, 2)$, $\coef(g, 3)$.
+        \item Write the relation between $\coef(g, t^k)$ and $k$-th derivative, $\frac{\partial^k}{\partial t^k}g(0)$.
+        \item For the function $g(t) = 1/(1-t)^p$ where $p \in \NN$ find $\coef(g, t^2)$, $\coef(g, t^{50})$, $\coef(g, t^k)$.
+    \end{enumerate}    
+\end{exercise}
+
+\begin{idea}
+    How to discover the equation for the generating function?   
+    \begin{itemize}
+        \item Represent the studied objects as vertices of a tree. 
+        Here $a_n$ will be the number of objects with distance from the root equal to $n$.
+        \item Encode objects as words, where $a_n$ is the number of $n$-letter words. 
+        These words correspond to path from the root to the object. 
+        \item Start from recurrence equation for $a_n$ and use \emph{sigma-boy} approach. 
+        \item Start from recurrence equation for $a_n$ and use \emph{two-way ticket} approach. 
+        \item Apply first step approach to generating function in probability theory. 
+    \end{itemize}
+\end{idea}
+
+\begin{exercise}
+    Replacing the Taylor expansion by the closed formula!
+    \begin{enumerate}[label=\alph*)]
+        \item Find the closed formula for 
+        \[
+        g(x) = 1 + x + x^2 + x^3 + x^4 + \dots 
+        \]
+        \item Find the closed formula for 
+        \[
+        g(x) = 1 + 7x + 7^2x^2 + 7^3x^3 + 7^4x^4 + \dots 
+        \]
+        \item Find a more compact formula for 
+        \[
+        g(x) = 1 + x + x^2 + x^3 + x^4 + \dots + x^{2026}.
+        \]
+        \item Find a more compact formula for
+        \[
+        g(x) = 1 + {10 \choose 1}x + {10 \choose 2}x^2 + {10 \choose 3} x^3 + \dots + {10 \choose 10}x^{10}.
+        \]
+        \item Find the closed formula for 
+        \[
+        g(x) = 0 + x + 2x^2 + 3x^3 + 4x^4 + \dots 
+        \]
+        Hint: one may use differentiation or $n$-letter words approach. 
+        \item Find the closed formula for 
+        \[
+        g(x) = 1\cdot 2 x^2 + 2\cdot 3 x^3 + 3 \cdot 4 x^4 + \dots 
+        \]
+        \item Find the closed formula for 
+        \[
+        g(x) = {2 \choose 2} x^2 + {3 \choose 2} x^3 + {4 \choose 2} x^4 + \dots 
+        \]
+        \item Find the closed formula for 
+        \[
+        g(x) = 0 + x + 2^2x^2 + 3^2x^3 + 4^2x^4 + \dots 
+        \]
+        Hint: sum up some previous results
+    \end{enumerate}
+\end{exercise}
+
+
+
+\begin{exercise}
+    Consider the rabbits story behind the Fibonacci numbers:
+
+    We start with one pair of young rabbits $F_1 = 1$. 
+    It takes one period of time for a pair of rabbits to mature. 
+    Every mature pair of rabbits in one period of time will give birth to a new young pair of rabbits. 
+
+    For consistency with the recurrence equation assume that $F_0 = 0$.
+
+    \begin{enumerate}[label=\alph*)]
+        \item Draw the tree where each rabbit alive at time $n$ is a node that is $n$-vertices apart from the root. 
+        \item Encode each rabbit alive at time $n$ as $n$-letter word. Hint: two types of letters are enough. 
+        \item Find the equation for the generating function. 
+        \item Find the generating function.
+        \item Using the generating function find
+        \[
+        \sum_{k=0}^{\infty} F_k / 100^k, \quad \sum_{k=0}^{\infty} k F_k / 100^k.
+        \]
+        \item Represent $0.01010203050813213455$ approximately as a simple fraction.  
+        \item Recover the formula for Fibonacci numbers using «sigma-boy» approach.
+        \item Recover the formula for Fibonacci numbers using «two-way ticked» approach.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+    Consider the recurrence equation
+    \[
+    a_n =  3a_{n-1} - 1, \quad a_0 = 1.
+    \]
+    \begin{enumerate}[label=\alph*)]
+        \item Find the equation for the generating function using «sigma-boy» method. 
+        \item Find the closed form of the generating function from the equation. 
+        \item Find the closed form of the generating function using «two-way ticket» method.
+        \item Find the formula for $a_n$ and the value $a_{1000}$.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+    Consider the recurrence equation
+    \[
+    a_n =  3a_{n-1} + 2n - 1, \quad a_1 = 4.
+    \]
+    \begin{enumerate}[label=\alph*)]
+        \item Find $a_0$ such that the recurrence formula works.
+        \item Find the equation for the generating function using «sigma-boy» method. 
+        \item Find the closed form of the generating function from the equation. 
+        \item Find the closed form of the generating function using «two-way ticket» method.
+        \item Find the formula for $a_n$ and the value $a_{1000}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Convolution!
+
+    Consider two generating functions 
+    \[
+    A(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \dots, \quad B(x) = b_0 + b_1 x + b_2 x^2 + b_3 x^3 + \dots
+    \]    
+    and they product $C(x) = A(x) \cdot B(x)$.
+    \begin{enumerate}[label=\alph*)]
+        \item Find $c_0$, $c_1$, $c_2$, $c_3$.
+        \item Find the general formula for $c_k$. 
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+    Consider the recurrence equation
+    \[
+    {n+4 \choose 4 } =  \sum_0^k a_k a_{n-k}, \quad a_0 = 1.
+    \]
+    \begin{enumerate}
+        \item Find $a_0$, $a_1$, $a_2$ by bare hands. 
+        \item Find the equation for the generating function $g(t)$. 
+        \item Find the formula for $a_n$. 
+    \end{enumerate}
+\end{exercise}
+
+\section{Day 7. Moorrreee generating functions}
+
+\begin{exercise}
+You can write any positive integer number on the sides of a dice. 
+\begin{enumerate}[label=\alph*)]
+    \item Is it possible to create two different non-standard dices $Y_1$ and $Y_2$ such that the distribution of $Y_1 + Y_2$ is the same as the distribution of a sum of two fair dices $X_1 + X_2$?  
+    \item Is it possible to create two identical non-standard dices $Y_1$ and $Y_2$ such that the distribution of $Y_1 + Y_2$ is the same as the distribution of a sum of two fair dices $X_1 + X_2$?
+    \item Is it possible to create two different non-standard dices $Y_1$ and $Y_2$ such that the distribution of $Y_1 + Y_2$ is uniform from $2$ to $12$?
+    \item Is it possible to create two identical non-standard dices $Y_1$ and $Y_2$ such that the distribution of $Y_1 + Y_2$ is uniform from $2$ to $12$?
+    \item Is it possible to create one non-standard dice $Y_1$ such that the distribution of sum with a standard second dice $Y_1 + X_2$ is uniform from $2$ to $12$?
+\end{enumerate}    
+\end{exercise}
+
+
+\begin{exercise}
+
+
+\end{exercise}
+
+\section{Day 8. Happy day ;)}
+
+\section{Day 9. }
+
+\section{Day 10. }
+
+\section{Day 11. }
+
+\section{Day 12. }
+
+\section{Day 13. }
+
+\section{Day 14. }
+
+
+\section{Day 15. Absolute happiness! }
 
 
 \section{Yet to discover}
