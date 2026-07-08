@@ -45,19 +45,20 @@
 
 \usepackage[symbol]{footmisc}
 
-\newcommand{\smallduck}{\begin{tikzpicture}[scale=0.3]
+\newcommand{\smallduck}{\begin{tikzpicture}[scale=0.4]
     \duck[
-        cape=black,
-        hat=black,
-        mask=black
-    ]
+jacket=gray,
+lapel=black,
+buttons,
+alien=green!50!brown
+]
     \end{tikzpicture}}
 
 \usepackage{fancyhdr} % весёлые колонтитулы
 \pagestyle{fancy}
 \lhead{Harbour.space}
 \chead{}
-\rhead{}
+\rhead{Midterm \smallduck}
 \lfoot{}
 \cfoot{}
 \rfoot{}
@@ -155,48 +156,37 @@
 
 
 
-\subsection*{Not a home assignment :)}
-
-This is a demo version of the midterm exam. 
-Midterm will consist of 6 problems: 
-two problems on binomial identities, two problems on recurrent equations, two problems on generating functions. 
-Some problems will be similar to demo \begin{tikzpicture}[scale=0.3]
-    \duck[
-conicalhat=brown]
-\end{tikzpicture}
-
-You may use one A4 cheat sheet in any form handwritten, printed, aquarelle painting\dots{ } 
+% \subsection*{Not a home assignment :)}
 
 \begin{enumerate}
 
-    \item You have $5$ cups of different colors and $20$ identical straws. 
+    \item I take $10$ cards from a well-shuffled standard deck of $52$ cards. 
+    
     \begin{enumerate}
-        \item In how many ways you can place straws into cups?
-        \item In how many ways you can place straws into cups if at least $3$ cups should be non-empty?
+        \item What is the probability that I will get exactly $2$ aces?
+        \item What is the probability that I will get $3$ aces and $2$ kings?
     \end{enumerate}
 
     \item Simplify 
     \[
-    {5 \choose 0}{6 \choose 4} + {5 \choose 1}{6 \choose 3} + {5 \choose 2}{6 \choose 2} + {5 \choose 3}{6 \choose 1} + {5 \choose 4}{6 \choose 0}.
+    {5 \choose 0}{6 \choose 2} + {5 \choose 1}{6 \choose 3} + {5 \choose 2}{6 \choose 4} + {5 \choose 3}{6 \choose 5} + {5 \choose 4}{6 \choose 6}.
     \]
 
 
     \item Solve the recurrence equation 
     \[
-        a_n = \frac{n (n+1)}{(n+2)(n+3)} a_{n-1}, \quad a_0 = 100.
+        a_n - 4a_{n-2} = 1, \quad a_0 = 0, a_1 = 1.
     \]
-
-    Hint: find $a_1$, $a_2$, $a_3$ and guess the pattern. 
 
     \item You play a the following lottery with the casino. There is a hat on the table. 
 A fair dice is thrown until the game ends. 
 \begin{itemize}
-    \item If the dice shows one then you get $+1$ dollar immediately and the game ends. 
-    \item If the dice shows two then the sum in the hat is multiplied by $2$ and the game continues. 
+    \item If the dice shows one then $+1$ dollar is added to the hat and the game continues. 
+    \item If the dice shows two then you immediately receive $+2$ dollars and the game continues. 
     \item If the dice shows three then $+3$ dollars are added to the hat and the game continues.
-    \item If the dice shows four then the sum in the hat goes back to casino and the game ends.
+    \item If the dice shows four then your receive half of the sum in the hat and the game ends.
     \item If the dice shows five then the sum in the hat goes back to the casino and the game continues.
-    \item If the dice shows six then the game ends and you receive the content of the hat. 
+    \item If the dice shows six then you receive the content of the hat and the game ends.
 \end{itemize}
 
 Let $e_n$ be your total expected payoff if there are $n$ dollars in the hat now. 
@@ -205,16 +195,16 @@ Find the recurrence equation for $e_n$. You don't need to solve it.
 
     \item Consider the recurrence equation 
     \[
-    a_n - 4a_{n-1} + 5a_{n-2} = 0 \text{ for } n\geq 2, \quad a_0 = 5, a_1 = 2.
+    a_n - 5 a_{n-1} + 3a_{n-2} = 0 \text{ for } n\geq 2, \quad a_0 = 1, a_1 = 2.
     \]
 
     Find the generating function $g(t)$ for the sequence $(a_0, a_1, a_2, \dots)$. 
 
     \item The sequence $(b_0, b_1, b_2, \dots)$ has a generating function 
     \[
-    g(t) = \frac{2}{1-3t} + \frac{5}{1-2t}.
+    g(t) = \frac{3}{1-3t} + \frac{2t}{1-2t}.
     \]
-    Find $b_0$, $b_1$ and $b_{100}$.
+    Find $b_0$, $b_1$ and $b_n$.
 
 \end{enumerate}
 
