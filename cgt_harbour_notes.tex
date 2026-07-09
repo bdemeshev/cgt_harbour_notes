@@ -1594,7 +1594,66 @@ You can write any positive integer number on the sides of a dice.
 
 \section{Day 8. Happy day ;)}
 
-\section{Day 9. }
+\section{Day 9. Generating functions in probability}
+
+
+\begin{exercise}
+I throw a fair coin until the sequence $HTH$ appears.
+
+\begin{enumerate}[label=\alph*)]
+    \item Draw the directed graph for this game.
+    \item Setup a system of equations for the sequences with the given endpoint and starting point at the start of the game. 
+    \item Setup a system of equations for the sequences with the given starting point and endpoint at the end of the game. 
+    \item Setup a system of equations for the non-terminal sequences with the given starting point.
+\end{enumerate}
+Let $N$ be the number of tosses, $N_H$ — the number of $H$ and $N_T$ — the number of $T$ till the end of the game. 
+\begin{enumerate}[label=\alph*), resume]
+    \item Find expected values $\E(N)$, $\E(N_H)$, $\E(N_T)$.
+    \item Find probabilities $\P(N = 12)$, $\P(N_H = 13)$, $\P(N_T = 14)$.
+    \item Find variances $\Var(N)$, $\Var(N_H)$, $\Var(N_T)$.
+    \item Find correlation $\Corr(N_H, N_T)$.
+\end{enumerate}
+
+Note: you may use sympy from python or other software for symbolic computations. 
+\end{exercise}
+
+
+\begin{exercise}
+Alice and Bob throw a fair coin until the sequence $A = HTH$ or the sequence $B = HHT$ appears.
+Alice wins if the sequence $A$ appears first, Bob wins if the sequence $B$ appears first.
+
+\begin{enumerate}[label=\alph*)]
+    \item Draw the directed graph for this game.
+    \item Setup a system of equations for the sequences with the given endpoint and starting point at the start of the game. 
+    \item Setup a system of equations for the sequences with the given starting point and endpoint at the end of the game. 
+    \item Setup a system of equations for the non-terminal sequences with the given starting point.
+\end{enumerate}
+Let $N$ be the number of tosses, $N_H$ — the number of $H$ and $N_T$ — the number of $T$ till the end of the game. 
+\begin{enumerate}[label=\alph*), resume]
+    \item Find expected values $\E(N)$, $\E(N_H)$, $\E(N_T)$.
+    \item What is the probability that Alice wins?
+    \item Find probabilities $\P(N = 12)$, $\P(N_H = 13)$, $\P(N_T = 14)$.
+    \item Find variances $\Var(N)$, $\Var(N_H)$, $\Var(N_T)$.
+    \item Find correlation $\Corr(N_H, N_T)$.
+    \item Find conditional probabilities $\P(N = 12 \mid \text{Alice wins})$, $\P(N_H = 13 \mid \text{Alice wins})$, $\P(N_T = 14 \mid \text{Alice wins})$.
+    \item Find conditional expected values $\E(N \mid \text{Alice wins})$, $\E(N_H \mid \text{Alice wins})$, $\E(N_T\mid \text{Alice wins})$.
+\end{enumerate}
+
+Note: you may use sympy from python or other software for symbolic computations. 
+\end{exercise}
+
+
+\begin{exercise}
+\end{exercise}
+
+
+\begin{exercise}
+\end{exercise}
+
+
+\begin{exercise}
+\end{exercise}
+
 
 \section{Day 10. }
 
