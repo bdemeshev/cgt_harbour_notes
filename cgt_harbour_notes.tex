@@ -1736,17 +1736,17 @@ The group $G$ acts on $A$ and therefore on $X$ by permuting the elements.
         \item For every two actions $a$ and $b$ there should exist the combined action $b\cdot a$. 
         Here $a$ is applied first, and $b$ is applied second. Convention is similar to $\cos \sin(x)$ where $\sin$-function is applied first and then $\cos$-function is applied.
     \end{enumerate}
-    From these two principles it follows that every group $G$ contains a «do nothing» action, identity element, denoted by $e$. 
+    From these two principles it follows that every group $G$ contains a «chill» action, identity element, denoted by $e$. 
 \end{definition}
 
 \begin{definition}
     Consider an action $g = (12)(3)(4)(56)(789)$. The \emph{cyclic monomial} of the action $g$ is given by
     \[
-    \CM(g) = x_2 \cdot x_1 \cdot x_1 \cdot x_2 \cdot x_3 = x_1^2 x_2^2 x_3.
+    \CM_g(x_1, x_2, \dots, x_n) = x_2 \cdot x_1 \cdot x_1 \cdot x_2 \cdot x_3 = x_1^2 x_2^2 x_3.
     \]
     In general the cyclic monomial of an action is the product 
     \[
-    \CM(g) = \prod_{i=1}^n x_i^{r_i}.
+    \CM_g(x_1, x_2, \dots, x_n) = \prod_{i=1}^n x_i^{r_i}.
     \]
     where $r_i$ is the number of cycles of lenght $i$ in the action $g$.
 \end{definition}
@@ -1754,7 +1754,7 @@ The group $G$ acts on $A$ and therefore on $X$ by permuting the elements.
 \begin{definition}
     The \emph{cyclic index} of the group $G$ is the polynomial given by the scaled sum of cyclic monomials for every action
     \[
-    \CI(x_1, x_2, \ldots, x_n) = \frac{1}{\size(G)} \sum_{g\in G} \CM(g).
+    \CI(x_1, x_2, \ldots, x_n) = \frac{1}{\size(G)} \sum_{g\in G} \CM_g(x_1, x_2, \dots, x_n).
     \]
 \end{definition}
 
