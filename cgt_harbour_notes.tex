@@ -189,6 +189,13 @@
 
 \DeclareMathOperator{\mgf}{mgf}
 
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\stab}{stab}
+\DeclareMathOperator{\fix}{fix}
+\DeclareMathOperator{\CM}{CM}
+\DeclareMathOperator{\CI}{CI}
+
+
 \DeclareMathOperator{\Convex}{Convex}
 \DeclareMathOperator{\plim}{plim}
 
@@ -1702,7 +1709,141 @@ Alice wins if the sequence $A$ appears first, Bob wins if the sequence $B$ appea
 \end{enumerate}
 
 
-\section{Day 10. }
+\section{Day 10. Polya-Redfield counting}
+
+\begin{definition}
+    \emph{Necklace} is a cirle of $n$ coloured beads that are considered equivalent under rotations. 
+
+    \emph{Cyclic group} $C_n$ is a collection of all possible rotations of a necklace. 
+\end{definition}
+
+\begin{definition}
+    \emph{Bracelet} is a cirle of $n$ coloured beads that are considered equivalent under rotations and flips (turn-overs). 
+
+    \emph{Dihedral group} $D_n$ is a collection of all possible rotations and flips of a bracelet.
+\end{definition}
+
+
+We will work with a set $A$ with $\size(A) = n$. 
+The number of colours will be denoted as $k$. 
+We will denote the set of all colorings of $A$ by $X$. 
+The group $G$ acts on $A$ and therefore on $X$ by permuting the elements.
+
+\begin{definition}
+    A \emph{group of actions} $G$ should satisfie two properties:
+    \begin{enumerate}
+        \item For every action $g$ there should exist an anti-action denoted by $g^{-1}$.
+        \item For every two actions $a$ and $b$ there should exist the combined action $b\cdot a$. 
+        Here $a$ is applied first, and $b$ is applied second. Convention is similar to $\cos \sin(x)$ where $\sin$-function is applied first and then $\cos$-function is applied.
+    \end{enumerate}
+    From these two principles it follows that every group $G$ contains a «do nothing» action, identity element, denoted by $e$. 
+\end{definition}
+
+\begin{definition}
+    Consider an action $g = (12)(3)(4)(56)(789)$. The \emph{cyclic monomial} of the action $g$ is given by
+    \[
+    \CM(g) = x_2 \cdot x_1 \cdot x_1 \cdot x_2 \cdot x_3 = x_1^2 x_2^2 x_3.
+    \]
+    In general the cyclic monomial of an action is the product 
+    \[
+    \CM(g) = \prod_{i=1}^n x_i^{r_i}.
+    \]
+    where $r_i$ is the number of cycles of lenght $i$ in the action $g$.
+\end{definition}
+
+\begin{definition}
+    The \emph{cyclic index} of the group $G$ is the polynomial given by the scaled sum of cyclic monomials for every action
+    \[
+    \CI(x_1, x_2, \ldots, x_n) = \frac{1}{\size(G)} \sum_{g\in G} \CM(g).
+    \]
+\end{definition}
+
+
+\begin{theorem}[Polya-Redfield theorem]
+    The generating function for all colorings of the set $A$ into three colors ($a$, $b$ and $c$) different with respect to group $G$ is given by
+    \[
+    g(a, b, c) = \CI(a + b + c, a^2 + b^2 + c^2, a^3 + b^3 + c^3, \dots, a^n + b^n + c^n).
+    \]
+    %For $k$ colors the formula is 
+    %\[
+    %g(a_1, a_2, \dots, a_k) = \CI(a_1 + a_2 + \dots + a_k, a_1^2 + a_2^2 + \dots + a_k^2, a_1^3 + a_2^3 + \dots + a_k^3, \dots, a_1^n + a_2^n + \dots + a_k^n).
+    %\]
+\end{theorem}
+
+\begin{theorem}[Burnside lemma]
+   The number of colorings of the set $A$ into $k$ colors different with respect to group $G$  is given by
+    \[
+    \size(X/G) = g(1, 1, \dots, 1) = \CI(k, k, k, \dots, k) =  \frac{1}{\size(G)} \sum_{g\in G}\size(\fix(g, X)).
+    \]
+\end{theorem}
+
+
+\begin{exercise}
+    Consider a necklace with $3$ beads.
+    \begin{enumerate}[label=\alph*)]
+        \item How many different necklaces of $k$ colours are there?
+        \item List all the necklaces of $3$ colors using a generating function. 
+    \end{enumerate}    
+\end{exercise}
+
+\begin{exercise}
+    Consider a bracelet with $3$ beads.
+    \begin{enumerate}[label=\alph*)]
+        \item How many different necklaces of $k$ colours are there?
+        \item List all the necklaces of $3$ colors using a generating function. 
+    \end{enumerate}    
+\end{exercise}
+
+
+
+\begin{exercise}
+    Consider a necklace with $4$ beads.
+    \begin{enumerate}[label=\alph*)]
+        \item How many different necklaces of $k$ colours are there?
+        \item List all the necklaces of $3$ colors using a generating function. 
+    \end{enumerate}    
+    Note: you may use sympy or other software for symbolic computations.
+\end{exercise}
+
+\begin{exercise}
+    Consider a bracelet with $4$ beads.
+    \begin{enumerate}[label=\alph*)]
+        \item How many different necklaces of $k$ colours are there?
+        \item List all the necklaces of $3$ colors using a generating function. 
+    \end{enumerate}    
+    Note: you may use sympy or other software for symbolic computations.
+\end{exercise}
+
+\begin{exercise}
+    We consider two cubic dices identical if one is the rotation of the other. 
+
+    \begin{enumerate}[label=\alph*)]
+        \item Explicitely describe the group of actions $G$. 
+        \item In how many ways can we label the faces of a dice with numbers from $1$ to $6$ if we should use every number exactly once?
+        \item In how many ways can we label the faces of a dice with numbers from $1$ to $3$ if we should use every number exactly twice?
+        \item Describe all possible dices with labels from $1$ to $3$ using a generating function.
+    \end{enumerate}
+    Note: you may use sympy or other software for symbolic computations.
+\end{exercise}
+
+
+\begin{exercise}
+    We consider two tetrahedrons identical if one is the rotation of the other. 
+
+    \begin{enumerate}[label=\alph*)]
+        \item Explicitely describe the group of actions $G$. 
+        \item In how many ways can we colour the faces of a tetrahedron with $k$ colors?
+        \item Describe all possible tetrahedrons with faces coloured in $3$ colors using a generating function.
+    \end{enumerate}
+    Note: you may use sympy or other software for symbolic computations.
+\end{exercise}
+
+
+
+\begin{exercise}
+    State the Polya-Redfield theorem for $4$ colors. 
+\end{exercise}
+
 
 \section{Day 11. }
 
@@ -1809,9 +1950,20 @@ Simplify
 % useful
 
 % https://www.youtube.com/watch?v=GBz4mTIkcsA
+% MathMajor,  Burnside's Theorem and Counting, 41 min, proof of Burnside, 
+% example: bracelet 2 colors 4 beads, dice 1-2-3-4-5-6, dice 1-2-3-1-2-3, 
+% ha: X = (1, 2, 3, 4, 5), G = <(12),(34)>
+% triangle D3, 2 colours
+% tetrahedron, G - rotations, 2 colors 
+
+% https://www.youtube.com/watch?v=lFKAkI-IAkU
+% Jang Soo Kim, Lecture 17, Polya enumeration theorem, 28 min, proof, D_4 bracelet example.
+
+
 % https://en.wikipedia.org/wiki/Group_action
 % https://en.wikipedia.org/wiki/Cayley_graph
-
+% https://www.whitman.edu/Documents/Academics/Mathematics/Huisinga.pdf
+% https://en.wikipedia.org/wiki/Proofs_of_Fermat's_little_theorem#Proof_by_counting_necklaces
 
 
 \newpage
