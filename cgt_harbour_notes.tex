@@ -1901,13 +1901,24 @@ The group $G$ acts on $A$ and therefore on $X$ by permuting the elements.
 \end{exercise}
 
 
+\begin{exercise}
+    Count the number of final positions in $3 \times 3$ noughts-and-crosses (tic-tac-toe) game.
+    % $(2 \cdot 2 + 1 \cdot 6 + (2 + 2)\cdot 12 + 1\cdot {9\choose 4}) / 8 = 23$
+\end{exercise}
+
+
+
 \subsection*{Home assignment: day 11 $\to$ day 14}
 \begin{enumerate}
-    \item 
-
-    \item 
-
-    \item 
+    \item Let's consider a $3 \times 3$ mosaic of no more than $k$ colors. 
+    We consider two mosaics the same if one can be obtained from the other using rotations or flips. 
+    
+        \begin{enumerate}[label=\alph*)]
+        \item Explicitely describe the group of actions $G$ acting on mosaics. 
+        \item How many different mosaics are there?
+        \item Describe all possible mosaics with no more than $3$ colours using a generating function.
+    \end{enumerate}
+    Note: you may use sympy or other software for symbolic computations.
 
     \item Watch the Mirek Olšák video «Burnside's lemma: counting up to symmetries» \cite{olsak2020burnside}.
 
@@ -1925,14 +1936,136 @@ The group $G$ acts on $A$ and therefore on $X$ by permuting the elements.
 
 \subsection*{Demo for the quiz on day 12}
 
+Let's consider a $4 \times 4$ mosaic of gems where each gem can be one of $k$ types. 
+Consider a $90^{\circ}$ clockwise rotation of the mosaic.
 \begin{enumerate}
-    \item 
-    \item 
-
+    \item Represent this rotation as a sequence of cycles and write the corresponging cycle monomial. 
+    \item How many $4\times 4$ mosaics are fixed by this rotation?
 \end{enumerate}
 
 
 \section{Day 12. Planarity and Euler's formula}
+
+\begin{theorem}[Euler characteristic]
+    If a polyhedra with $v$ vertices, $f$ faces and $e$ edges is drawn on a surface with $h$ holes then
+    \[
+    v - e + f = 2 - 2h.
+    \]
+    Note: the hole should be a part of the polyhedra!
+\end{theorem}
+
+\begin{definition}
+    Complete graph $K_n$ consists of $n$ vertices. All edges are present.
+\end{definition}
+
+\begin{definition}
+    Complete multipartite graph $K_{a, b, c, \dots}$ consists of groups of nodes.
+    The first group has $a$ vertices, the second one — $b$ vertices, the third one — $c$ vertices, and so on.
+    There are no edges between vertices of the same group. 
+    All edges between members of different groups are present.
+\end{definition}
+
+\begin{definition}
+    The graph $B$ is called a subdivision of a graph $A$ if graph $B$ is obtained from graph $A$ by adding vertices on already existing edges. 
+\end{definition}
+
+\begin{theorem}[Kuratowski's theorem]
+    A graph is planar if and only if it contains no subdivision of $K_{3,3}$ nor $K_5$.    
+\end{theorem}
+
+
+
+\begin{exercise}
+    Prove the Euler characteristic formula. 
+    If a polyhedra with $v$ vertices, $f$ faces and $e$ edges is drawn on a surface with $h$ holes then
+    \[
+    v -e + f = 2 - 2h.
+    \]
+\end{exercise}
+
+\begin{exercise}
+    Consider a convex polyhedra with $20$ vertices and $10$ faces. 
+    
+    How many edges does it have?
+\end{exercise}
+
+\begin{exercise}
+    Consider a plane connected graph with $v$ vertices and $e$ edges that divides the plane into $f$ regions (faces).
+    \begin{enumerate}[label=\alph*)]
+        \item Find the value of the Euler characteristic $v - e + f$.
+        \item How the answer will change if the graph has $c$ components?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Consider a football made of $p$ pentagons and $h$ hexagons with three faces meeting at each vertex.
+    \begin{enumerate}[label=\alph*)]
+        \item How many faces are there? % p + h
+        \item How many vertices are there? % $(5p + 6h)/3$.
+        \item How many edges are there? % (5p + 6h) / 2
+        \item How many pentagons should be on a football? % 12
+        % \item How many hexagons should be on a football? % 2 or more is ok
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Draw $K_5$, $K_{3,3}$ and $K_{2,2,2}$.
+
+    Draw any subdivision of $K_5$, $K_{3,3}$ and $K_{2,2,2}$.
+\end{exercise}
+
+
+\begin{exercise}
+    Is the Peterson graph planar?
+
+    \includegraphics[width=5cm]{peterson_graph.png}
+\end{exercise}
+
+
+\begin{exercise}    
+    \begin{enumerate}[label=\alph*)]
+        \item Which complete graphs $K_n$ are planar?
+        \item Which complete multipartite graphs $K_{a, b}$ are planar? % a <= 2, any b 
+        \item Which complete multipartite graphs $K_{a, b, c}$ are planar? % case 1: a, b, c <= 2, case 2: a >= 3 b=c=1
+        \item Which complete multipartite graphs $K_{a, b, c, d}$ are planar? % a <= 2, b=c=d=1
+        \item Which complete multipartite graphs $K_{a, b, c, d, e}$ are planar? % no 
+    \end{enumerate}
+    
+\end{exercise}
+
+
+\begin{exercise}
+    Draw tetrahedron, cube, octahedron, dodecahedron, icosahedron.
+\end{exercise}
+
+
+\begin{exercise}
+    Consider a convex polyhedra. 
+
+    \begin{enumerate}[label=\alph*)]
+        \item What is bigger $2e$ or $3v$?
+        \item What is bigger $2e$ or $6f$?
+        \item What are possible values for the shortest face boundary (shortest cycle in the language of graph theory)?
+    \end{enumerate}
+    % 3, 4, 5
+\end{exercise}
+
+
+\begin{exercise}
+    Draw tetrahedron, cube, octahedron, dodecahedron, icosahedron.
+\end{exercise}
+
+\begin{exercise}
+    Consider a regular polyhedra where each face if a $k$-gon and degree of every vertex is $d$.
+    \begin{enumerate}[label=\alph*]
+        \item What is bigger $2e$ or $dv$?
+        \item What is bigger $2e$ or $ke$?
+        \item Write the Euler characteristic identity in terms of $d$, $k$ and $e$. 
+        \item What are the possible combinations of $d$ and $k$?
+    \end{enumerate}
+\end{exercise}
+
+
 
 \section{Day 13. Graph colourings}
 
