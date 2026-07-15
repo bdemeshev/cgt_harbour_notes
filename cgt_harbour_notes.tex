@@ -180,6 +180,8 @@
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\trace}{trace}
 \DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\chrom}{chrom}
+
 \DeclareMathOperator{\coef}{coef}
 \DeclareMathOperator{\tr}{\trace}
 \DeclareMathOperator{\rk}{\rank}
@@ -195,6 +197,7 @@
 \DeclareMathOperator{\CM}{CM}
 \DeclareMathOperator{\CI}{CI}
 
+\DeclareMathOperator{\ramsey}{Ramsey}
 
 \DeclareMathOperator{\Convex}{Convex}
 \DeclareMathOperator{\plim}{plim}
@@ -2188,6 +2191,149 @@ Consider a $90^{\circ}$ clockwise rotation of the mosaic.
 
 
 \section{Day 13. Graph colourings}
+
+\begin{definition}
+    By \emph{$k$-colouring} we mean a colouring of vertices of a graph into no more than $k$ given colours.
+    A \emph{proper colouring} assigns different colours do \emph{adjacent} vertices.
+    If a proper colouring of a graph exists then the graph is called \emph{$k$-colourable}.
+\end{definition}
+
+\begin{definition}
+    \emph{The chromatic number} of a graph, denoted by $\chi(G)$, is the minimal number of colours $k$ such that the graph $G$ is $k$-colourable.
+\end{definition}
+
+\begin{exercise}
+    By $C_n$ we denote a cycle graph with $n$ vertices.
+
+    \begin{enumerate}
+        \item Is the cycle $C_5$ colourable in $2$ colours? 
+        \item Is the cycle $C_5$ colourable in $3$ colours?
+        \item Find the chromatic number $\chi(C_n)$ for $n\geq 2$.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+    By $P_n$ we denote a path graph with $n$ vertices.
+
+    \begin{enumerate}[label=\alph*)]
+        \item Find chromatic numbers $\chi(K_{50})$, $\chi(K_{20, 30, 40})$, $\chi(P_{255})$.
+        \item Find the general formulas $\chi(K_n)$, $\chi(K_{a, b, c})$, $\chi(P_n)$ for $a, b, c, n \geq 1$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    You know that the chromatic number of a graph $G$ is equal to $2026$. 
+    You add one new vertex and some new edges. 
+
+    What are the possible values of the new chromatic number?
+\end{exercise}
+
+\begin{exercise}
+    A connected graph contains $2026$ edges. 
+    
+    What is the minimal possible chromatic number?
+\end{exercise}
+
+
+\begin{definition}
+    The \emph{chromatic polynomial} $\chrom(k, G)$ is the number of $k$-colourings of a graph $G$. 
+    We consider two colourings different if they differ in at least one vertex.
+\end{definition}
+
+\begin{exercise}
+    Find some chromatic polynomials!
+    \begin{enumerate}[label=\alph*)]
+        \item Find $\chrom(k, K_n)$ for $n\geq 1$.
+        \item Find $\chrom(k, C_n)$ for $n\geq 2$.
+        \item Find $\chrom(k, G)$ for the empty graph $G$ with no edges and $n$ vertices.
+        \item Find $\chrom(k, T_n)$ for a tree with $n$ vertices.
+    \end{enumerate}
+    
+\end{exercise}
+
+
+\begin{theorem}[Birkhoff and Lewis]
+Notation:
+\begin{itemize}
+    \item $G - e$ is the graph $G$ with the edge $e$ removed;
+    \item $G/e$ is the graph where the ends of the edge $e$ are glued into one vertex and duplicated edges removed.
+\end{itemize}
+\[
+\chrom(k, G) = \chrom(k, G-e) - \chrom(k, G/e).
+\]
+\end{theorem}
+
+\begin{exercise}
+Prove the Birkhoff and Lewis formula 
+\[
+\chrom(k, G) = \chrom(k, G-e) - \chrom(k, G/e).
+\]
+\end{exercise}
+
+\begin{exercise}
+    Find some more chromatic polynomials!
+    \begin{enumerate}[label=\alph*)]
+        \item Find $\chrom(k, K_4 - e)$ for $n\geq 1$.
+        \item Find $\chrom(k, K_{1,3})$ and $\chrom(k, K_{1,5})$.
+    \end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+You know that $\chrom(k, G) = k(k-1)^{n-1}$. What can you conlude about the graph $G$?    
+\end{exercise}
+
+
+\begin{exercise}
+    Some properties of the chromatic polynomial.
+\begin{enumerate}[label=\alph*)]
+    \item What is the degree of the polynomial $\chrom(k, G)$ if the graph $G$ has $n$ vertices?
+    \item What is the value of the constant term in $\chrom(k, G)$?
+    \item What is the value of the coefficient of $k^n$ in $\chrom(k, G)$?
+    \item What is the value of the coefficient of $k^{n-1}$ in $\chrom(k, G)$ if the graph $G$ has $e$ edges?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Is it possible that $\chrom(k, G)=k^4 - 3k^3 + 3k^2$?
+\end{exercise}
+
+\begin{exercise}
+    Imagine the graph $G$ consists of two components, $A$ and $B$. Each component is connected, but there are no edges between $A$ and $B$.
+\begin{enumerate}[label=\alph*)]
+    \item How would you obtain $\chrom(k, G)$ from $\chrom(k, A)$ and $\chrom(k, B)$?
+    \item What is the value of the coefficient of $k$ in $\chrom(k, G)$?
+\end{enumerate}
+
+\end{exercise}
+
+
+\begin{definition}
+    The Ramsey number $\ramsey(G, H)$ is the minimal number of vertices $n$ of a complete graph $K_n$ 
+    such that any colouring of its edges  into blue and red contains either a red copy of $G$ or a blue copy of $H$.
+
+    The Ramsey number $\ramsey(K_a, K_b)$ is simply denoted by $\ramsey(a, b)$.
+\end{definition}
+
+
+\begin{exercise}
+    Find $\ramsey(1, b)$ and $\ramsey(2, b)$.
+\end{exercise}
+
+\begin{exercise}
+    Find $\ramsey(6, 6)$ and be the greatest mathematician of the century (or maybe millenium). 
+\end{exercise}
+
+\begin{exercise}
+    Find some small Ramsey numbers:
+    \begin{enumerate}[label=\alph*)]
+        \item Find $\ramsey(P_2, P_2)$, $\ramsey(P_2, P_3)$, $\ramsey(P_3, P_3)$.
+        \item Find $\ramsey(C_2, C_2)$, $\ramsey(C_2, C_3)$, $\ramsey(C_3, C_3)$, $\ramsey(C_3, C_4)$, $\ramsey(C_4, C_4)$.
+    \end{enumerate}
+\end{exercise}
+
+
 
 \section{Day 14. How to avoid combinatorics?}
 
