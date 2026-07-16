@@ -1,0 +1,214 @@
+% arara: xelatex
+\documentclass[12pt]{article}
+
+% \usepackage{physics}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage{tikzducks}
+
+\usepackage{tikz} % картинки в tikz
+\usetikzlibrary{shapes, arrows, positioning}
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath, amsfonts, amssymb} % куча стандартных математических плюшек
+
+\usepackage{comment}
+
+\usepackage[top=2cm, left=1.2cm, right=1.2cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+\usepackage{url} % to use \url{link to web}
+
+\usepackage{xcolor}   % для цвета текста
+\usepackage{ulem}     % для зачёркивания (\sout)
+
+\usepackage[symbol]{footmisc}
+
+\newcommand{\smallduck}{\begin{tikzpicture}[scale=0.3]
+    \duck[
+        cape=black,
+        hat=black,
+        mask=black
+    ]
+    \end{tikzpicture}}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Harbour.space}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{tcolorbox} % рамочки!
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos - печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\setcounter{MaxMatrixCols}{20}
+% by crazy default pmatrix supports only 10 cols :)
+
+
+\usepackage{fontspec}
+\usepackage{libertine}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+
+\usetikzlibrary{automata, positioning, arrows.meta, calc, shapes.multipart}
+
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+% \setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+% \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+% \setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+\DeclareMathOperator{\Corr}{\mathbb{C}orr}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\row}{row}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+% \DeclareMathOperator{\tr}{trace}
+\DeclareMathOperator{\card}{card}
+
+\DeclareMathOperator{\Convex}{Convex}
+\DeclareMathOperator{\plim}{plim}
+
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cF}{\mathcal{F}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\hb}{\hat{\beta}}
+\newcommand{\dPois}{\mathrm{Pois}}
+\newcommand{\dUnif}{\mathrm{Unif}}
+
+\usepackage{mathtools}
+
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\scalp}{\langle}{\rangle}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+
+
+\begin{document}
+
+%Madame de Pompadour%\footnote{official chief mistress of King Louis XV} 
+%was born exactly 204 years earlier, on 29 December 1721. 
+%Her original name was Jeanne Antoinette Poisson.
+
+
+
+
+
+\subsection*{Final demo :)}
+
+This is a demo version of the final exam. 
+Final will consist of 6 problems: generating functions in probability, Polya-Redfield counting, planarity and Euler formula, graph colouring, linearity of expected value and one old topic.
+% midterm: two problems on binomial identities, two problems on recurrent equations, two problems on generating functions. 
+Some problems will be similar to demo \begin{tikzpicture}[scale=0.3]
+     \shuffleducks[13]
+    \randuck
+\end{tikzpicture}
+
+You may use one A4 cheat sheet in any form handwritten, printed, aquarelle painting\dots{ } 
+
+\begin{enumerate}
+    \item {[old topic]} Write the Taylor expansion at $x_0 = 0$ of the function 
+    \[
+    f(x) = (1 - 5x^2)^{1/2}.
+    \]
+    \item {[generating functions in probability]} 
+    I throw a coin until the sequence $HTT$ appears. The coin is not fair and shows $H$ with probability $0.4$.
+\begin{enumerate}[label=\alph*)]
+    \item Draw the directed graph for this game.
+    \item Setup a system of equations for the sequences with given endpoint and starting point at the start of the game. 
+    \item Explain how would you calculate expected number of coin tosses from the start till the end of the game.
+    
+    Note: you don't need to do actual calculations nor to solve the system, just describe how can you extract the expected value using derivatives. 
+\end{enumerate}
+
+    \item {[Polya-Redfield counting]} Consider a $2\times 2$ mosaic of gems, where each gem may be of one of $k$ possible types.
+    We consider mosaics identical if the can be transformed one into another by rotation or flip. 
+\begin{enumerate}[label=\alph*)]
+    \item List all elements of the group of actions that act on mosaics.
+    \item Write each action as a combination of cycles and provide its cyclic monomial. 
+    \item Find the cyclic index and the number of different possible colourings.
+\end{enumerate}
+    \item {[planarity and Euler formula]} The convex polyhedron consists of only of  triangular and  hexagonal faces  faces with with three faces meeting at each vertex.
+    
+    How many triangular faces are there?
+
+    \item {[graph colouring]} Consider the graph with two components. The first component is a $K_4$ graph, the second one — $C_4$ graph. 
+    Components are non connected between them. You have $k$ colours available.
+
+    In how many ways can you color the vertices of this graph if adjacent colors can't be coloured in the same colour?
+    
+    
+    \item {[linearity of expected value]} There are $20$ types of desserts in a café. In the queue there are $10$ clients.
+Each client prefers one of the desserts at random with equal probabilities.
+
+\begin{enumerate}[label=\alph*)]
+  \item What is the average number of dessert types bought?
+  \item What is the average number of dessert types bought if each client will not buy any dessert with probability $0.3$?
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
+
