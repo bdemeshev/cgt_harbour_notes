@@ -1,0 +1,284 @@
+% arara: xelatex
+\documentclass[12pt]{article}
+
+% \usepackage{physics}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage{tikzducks}
+
+\usepackage{tikz} % картинки в tikz
+\usetikzlibrary{shapes, arrows, positioning}
+\usepackage{tkz-berge}
+
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath, amsfonts, amssymb} % куча стандартных математических плюшек
+
+\usepackage{comment}
+
+\usepackage[top=2cm, left=1.2cm, right=1.2cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+\usepackage{url} % to use \url{link to web}
+
+\usepackage{xcolor}   % для цвета текста
+\usepackage{ulem}     % для зачёркивания (\sout)
+
+\usepackage[symbol]{footmisc}
+
+\newcommand{\smallduck}{\begin{tikzpicture}[scale=0.3]
+    %\duck[
+        %cape=black,
+        %hat=black,
+        %mask=black
+    %]
+    \duck[crazyhair, 
+        hockey=brown!70!black]
+    \end{tikzpicture}}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Harbour.space}
+\chead{Summer 2026}
+\rhead{Quiz \smallduck}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{tcolorbox} % рамочки!
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos - печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\setcounter{MaxMatrixCols}{20}
+% by crazy default pmatrix supports only 10 cols :)
+
+
+\usepackage{fontspec}
+\usepackage{libertine}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+
+\usetikzlibrary{automata, positioning, arrows.meta, calc, shapes.multipart}
+
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+% \setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+% \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+% \setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+\DeclareMathOperator{\Corr}{\mathbb{C}orr}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\row}{row}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+% \DeclareMathOperator{\tr}{trace}
+\DeclareMathOperator{\card}{card}
+
+\DeclareMathOperator{\chrom}{chrom}
+
+
+\DeclareMathOperator{\Convex}{Convex}
+\DeclareMathOperator{\plim}{plim}
+
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cF}{\mathcal{F}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\hb}{\hat{\beta}}
+\newcommand{\dPois}{\mathrm{Pois}}
+\newcommand{\dUnif}{\mathrm{Unif}}
+
+
+
+\usepackage{mathtools}
+
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\scalp}{\langle}{\rangle}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+
+
+\begin{document}
+
+%Madame de Pompadour%\footnote{official chief mistress of King Louis XV} 
+%was born exactly 204 years earlier, on 29 December 1721. 
+%Her original name was Jeanne Antoinette Poisson.
+
+
+
+
+\begin{enumerate} 
+    \item[2.1.] Using hockey stick decomposition or otherwise find the sums
+    \[
+    \sum_{k=1}^{n} {6k^2 + 2k}.
+    \]
+
+    \item[2.2] Take a deep breath and calculate 
+\[
+{-1 \choose 3},\quad  {4/3 \choose 4}, \quad  {-1/2 \choose 4}. 
+\]
+
+
+    \item[3.1.] Using Gauss summation trick or otherwise find the sum 
+    \[
+    -3{n\choose 0} -1 {n \choose 1} +1 \cdot {n \choose 2} + 3 \cdot {n \choose 3} + \dots + (2n - 3) {n \choose n}.
+    \]
+    \item[3.2.] Consider the equation $a + b + c = 11$ with integers $a \geq 3$, $b \geq 2$, $c\geq 2$.
+
+    \begin{enumerate}
+        \item How many solutions are there?
+        \item Which solution would you encode as $\star \star \mid \, \mid \star\star\star$?
+    \end{enumerate}
+
+    \item[4.1.] Solve the recurrence equation:
+    \[
+    b_n = \frac{n + 3}{n + 4} b_{n-1}, \quad b_1 = 10.
+    \]
+    \item[4.2.] Here $L$ is the lag operator and $x_n = 6^n$. 
+    Find the values
+    \[
+    (1 - 6L) x_n, \quad (1 - 2L)x_n, \quad (1-6L)(1 - 3L)x_n.
+    \]
+
+
+    \item[5.1.] Consider the recurrence equation $y_n - 7 y_{n-1} + 12 y_{n-2} = 0$.
+    
+    Find all solutions of the form $y_n = \lambda^n$.
+    \item[5.2.] You know that $r_n = c \cdot 2^n + d \cdot n \cdot 3^n + n$ is the solution of some recurrence equation with initial conditions  $r_0 = 3$ and $r_1 = 12$.
+    
+    Find $c$ and $d$. 
+
+    \item[6.1.] Calculate the following complex values: 
+    \[
+    (6 - 3i) \cdot (2 + 4i), \quad \frac{1 + 8i}{3 + 4i}, \quad (1 - 5i)^3.
+    \]
+    \item[6.2.] Consider the recurrence equation
+    \[
+    a_n - 4 a_{n-1} + 5 a_{n-2} = 4 n -14.
+    \] 
+    Find the solution of the form $a_n = \alpha n + \beta$.
+
+
+    \item[7.1.] Extract the sequence $(a_n)$ from the generating functions:
+    \[
+    g(t) = \frac{1}{1 - 5t}, \quad g(t) = \frac{1}{1 + 2t}, \quad g(t) = \frac{t}{1 - 3t}.
+    \]
+    \item[7.2.] Decompose the fraction into a sum of more simple fractions
+    \[
+    g(t) = \frac{5 - 5t}{(1 + 2t)(1-3t)}.
+    \]
+
+    \newpage
+ 
+    \item[10.1] I throw a fair coin until the sequence $HHT$ appears. 
+    Draw the directed graph for this game.
+    \item[10.2] Alice and Bob throw a fair coin until the sequence $A = HHH$ or the sequence $B = THT$ appears.
+Alice wins if the sequence $A$ appears first, Bob wins if the sequence $B$ appears first.
+ Draw the directed graph for this game.
+
+  
+     \item[11.1] Write the cyclic monomial that corresponds to the transposition $(123)(4)(5)(6789)$.
+    
+    \item[11.2] You know that the cycle index of the group $G$ that acts on the colourings $X$ is given by 
+    \[
+    CI(z_1, z_2, z_3, z_4) = \frac{1}{24}(z_1^6 + 6z_2z_4 + 8z_3^2 + 9z_1^2 z_2^2)
+    \]
+    \begin{enumerate}[label=\alph*)]
+        \item How many different colourings in $1$, $2$ or $3$ colours are possible?
+        \item How many different colourings in exactly $3$ colours are possible?
+    \end{enumerate}
+
+    You don't need to finalize all arithmetic calculations in the quiz, just write the answer as an expression with numbers. 
+
+
+    \item[12] Let's consider a $4 \times 4$ mosaic of gems where each gem can be one of $k$ types. 
+Consider a $180^{\circ}$ clockwise rotation of the mosaic.
+\begin{enumerate}
+    \item[12.1] Represent this rotation as a sequence of cycles and write the corresponging cycle monomial. 
+    \item[12.2] How many $4\times 4$ mosaics are fixed by this rotation?
+\end{enumerate}
+    \item[13.1] Let $e$ be some edge of the complete graph $K_4$. 
+    
+    Draw the graphs $K_4$, $K_4 - e$ and $K_4/e$.
+    \item[13.2] Compute the chromatic polynomial $\chrom(k, C_4)$ where $C_4$ is the cycle with $4$ vertices.
+
+        \item[14.1] Let $e$ be some edge of the complete multipartite graph $K_{1,3}$. 
+    
+    Draw the graphs $K_{1,3}$, $K_{1,3} - e$ and $K_{1,3}/e$.
+    \item[14.2] Compute the chromatic polynomial of the following graph:
+    
+
+\begin{tikzpicture}
+\GraphInit[vstyle=Simple]
+\grEmptyCycle[RA=1.5]{5}
+\Edges(a4, a0)
+
+\Edges(a1, a2)
+\Edges(a2, a3)
+\Edges(a3, a4)
+\Edges(a4, a1)
+\Edges(a4, a2)
+\end{tikzpicture}
+
+
+\end{enumerate}
+
+
+\end{document}
+
