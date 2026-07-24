@@ -611,32 +611,20 @@ Homage to Newton.
 
 
 
-\subsection*{Home assignment-1:}
+\subsection*{Home assignment: day 1 $\to$ day 4}
 
 \begin{enumerate}
     \item Simplify
 \[
 \sum_{a + b + c = 100} {100 \choose a} \cdot {100-a \choose b}.
 \]
-    \item 1.9(2) in the old enumeration:
-
-    Find explicit formula for the sum 
+    \item Find explicit formula for the sum 
     \[
     1^3 + 2^3 + \dots + n^3.
     \]
     Hint: represent the general term $k^3$ as the sum of binomial coefficients and then use the hockey stick or Christmas stocking or boomerang!
 
-    \item  {[*]} Using hockey stick decomposition find the sums
-    \[
-    \sum_{k=1}^{n} {5k^2 + 4k}.
-    \]
-
-    \item {[*]} Take a deep breath and calculate 
-\[
-{-1 \choose 3}, \quad {-5 \choose 5},\quad  {1.5 \choose 3}, \quad  
-{-1/2 \choose 4}, \quad  {1/3 \choose k}, \quad  {-1/2 \choose n}. 
-\]
-
+ 
     \item Write the Taylor expansion at $x = 0$ for 
 \[
 \frac{1}{1 - x}, \quad  (1 + x)^{-5}, \quad  (1 + x)^{-1/2}, \quad  
@@ -648,6 +636,23 @@ Homage to Newton.
     \url{https://youtu.be/gMlf1ELvRzc?si=VASoVKQj3Pk-wstA},
     \qrcode{https://youtu.be/gMlf1ELvRzc?si=VASoVKQj3Pk-wstA}.
 \end{enumerate}
+
+\subsection*{Demo for the quiz on day 2}
+
+\begin{enumerate}
+
+   \item  {[*]} Using hockey stick decomposition find the sums
+    \[
+    \sum_{k=1}^{n} {5k^2 + 4k}.
+    \]
+
+    \item {[*]} Take a deep breath and calculate 
+\[
+{-1 \choose 3}, \quad {-5 \choose 5},\quad  {1.5 \choose 3}, \quad  
+{-1/2 \choose 4}, \quad  {1/3 \choose k}, \quad  {-1/2 \choose n}. 
+\]
+\end{enumerate}
+
 
 You are more than welcome to solve other exercises that we skipped. Starred exercises will be on the quiz next day. 
 
@@ -1660,7 +1665,7 @@ Find the recurrence equation for $e_n$. You don't need to solve it.
 
 
 
-\subsection*{Actual midterm}
+\subsection*{Midterm exam}
 
 \begin{enumerate}
 
@@ -2356,6 +2361,12 @@ You know that $\chrom(k, G) = k(k-1)^{n-1}$. What can you conlude about the grap
     \end{enumerate}
 \end{exercise}
 
+\begin{exercise}
+    Watch Trefor Bazett's video «Why complete chaos is impossible: Ramsey theory», \cite{bazett2023chaos}:
+
+    \url{https://www.youtube.com/watch?v=ZykdsnIpXNk}, \qrcode{https://www.youtube.com/watch?v=ZykdsnIpXNk}
+\end{exercise}
+
 
 
 \section{Day 14. How to avoid combinatorics?}
@@ -2484,6 +2495,120 @@ Consider a random graph on $n \geq 5$ vertices where each edge is drawn independ
 
 
 \section{Day 15. Absolute happiness! }
+
+\subsection*{Final demo}
+
+This is a demo version of the final exam. 
+Final will consist of 6 problems: generating functions in probability, Polya-Redfield counting, planarity and Euler formula, graph colouring, linearity of expected value and one old topic.
+% midterm: two problems on binomial identities, two problems on recurrent equations, two problems on generating functions. 
+Some problems will be similar to demo \begin{tikzpicture}[scale=0.3]
+     \shuffleducks[13]
+    \randuck
+\end{tikzpicture}
+
+You may use one A4 cheat sheet in any form handwritten, printed, aquarelle painting\dots{ } 
+
+\begin{enumerate}
+    \item {[old topic]} Write the Taylor expansion at $x_0 = 0$ of the function 
+    \[
+    f(x) = (1 - 5x^2)^{1/2}.
+    \]
+    \item {[generating functions in probability]} 
+    I throw a coin until the sequence $HTT$ appears. The coin is not fair and shows $H$ with probability $0.4$.
+\begin{enumerate}[label=\alph*)]
+    \item Draw the directed graph for this game.
+    \item Setup a system of equations for the sequences with given endpoint and starting point at the start of the game. 
+    \item Explain how would you calculate expected number of coin tosses from the start till the end of the game.
+    
+    Note: you don't need to do actual calculations nor to solve the system, just describe how can you extract the expected value using derivatives. 
+\end{enumerate}
+
+    \item {[Polya-Redfield counting]} Consider a $2\times 2$ mosaic of gems, where each gem may be of one of $k$ possible types.
+    We consider mosaics identical if the can be transformed one into another by rotation or flip. 
+\begin{enumerate}[label=\alph*)]
+    \item List all elements of the group of actions that act on mosaics.
+    \item Write each action as a combination of cycles and provide its cyclic monomial. 
+    \item Find the cyclic index and the number of different possible colourings.
+\end{enumerate}
+    \item {[planarity and Euler formula]} The convex polyhedron consists only of  triangular and  hexagonal faces  with  three faces meeting at each vertex.
+    
+    How many triangular faces are there?
+
+    \item {[graph colouring]} Consider the graph with two components. The first component is a $K_4$ graph, the second one — $C_4$ graph. 
+    Components are non connected between them. You have $k$ colours available.
+
+    In how many ways can you color the vertices of this graph if adjacent colours can't be the same?
+    
+    
+    \item {[linearity of expected value]} There are $20$ types of desserts in a café. In the queue there are $10$ clients.
+Each client prefers one of the desserts at random with equal probabilities.
+
+\begin{enumerate}[label=\alph*)]
+  \item What is the average number of dessert types bought?
+  \item What is the average number of dessert types bought if each client will not buy any dessert with probability $0.3$?
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\subsection*{Final exam}
+
+\begin{enumerate}
+    
+    \item {[generating functions in probability]} 
+    I throw a fair coin until the sequence $HHH$ appears. % The coin is not fair and shows $H$ with probability $0.4$.
+\begin{enumerate}[label=\alph*)]
+    \item Draw the directed graph for this game.
+    \item Setup a system of equations for the sequences with given endpoint and starting point at the start of the game. 
+    \item Explain how would you calculate the  expected number of \emph{tails} from the start till the end of the game.
+    
+    Note: you don't need to do actual calculations nor to solve the system, just describe how can you extract the expected value using derivatives. 
+\end{enumerate}
+
+    \item {[Polya-Redfield counting]}  Consider a $3\times 3$ mosaic of gems, where each gem may be of one of $k$ possible types.
+    We consider mosaics identical if the can be transformed one into another by rotation. \emph{Flips are not available!} 
+\begin{enumerate}[label=\alph*)]
+    \item List all elements of the group of actions that act on mosaics.
+    \item Write each action as a combination of cycles and provide its cyclic monomial. 
+    \item Find the cyclic index and the number of different possible mosaics for $k=10$ gem types available.
+\end{enumerate}
+    \item {[planarity and Euler formula]} Rhombicosidodecahedron has $20$ triangular faces, $30$ square faces and some number of pentagonal faces. 
+    The total number of vertices is $60$. 
+
+    \begin{enumerate}[label=\alph*)]
+        \item How many pentagonal faces does rhombicosidodecahedron have?
+        \item How many edges are meeting at every vertex?
+    \end{enumerate}
+
+    \item {[graph colouring]} Consider the graph with three components. The first component is a $C_4$ graph, the second one — a tree with $10$ vertices,
+    the third one — an isolated vertex. Components are non connected.
+    
+    \begin{enumerate}[label=\alph*)]
+        \item Draw an example of such a graph.
+        \item You have $10$ colours available. In how many ways can you color the vertices of this graph if adjacent vertices should be painted differently?
+    \end{enumerate}
+
+        
+    \item {[linearity of expected value]} We put randomly $7$ pencils in $10$ boxes one by one choosing each box with equal probabilities.
+\begin{enumerate}[label=\alph*)]
+  \item What is the average number of empty boxes?
+  \item What is the average number of boxes with more than one pencil?
+\end{enumerate}
+
+
+    \item {[old topic]} The generating sequence $g(t)$ of an integer sequence $(c_0, c_1, c_2, \dots)$ satisfies the equation 
+    \[
+    g(t) = 1 + t \cdot g(t) \cdot g(t).
+    \]
+    \begin{enumerate}
+        \item Solve the equation for $g(t)$.
+        \item Which of the two roots should we choose if all $c_n$ are positive?
+        \item Find $c_3$.
+    \end{enumerate}
+
+
+\end{enumerate}
 
 
 \section{Yet to discover}
